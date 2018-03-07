@@ -12,7 +12,7 @@ namespace Core
 		class RegularPolygon : public Shape2D
 		{
 		public:
-			using radius_type = Vertex::value_type;
+			using radius_type = Vertex::value_type; //boo!
 		
 			RegularPolygon(Vertex middle, unsigned int n, radius_type radius, GLenum usage = GL_STATIC_DRAW);
 
