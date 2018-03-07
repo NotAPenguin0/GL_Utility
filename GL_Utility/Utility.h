@@ -16,7 +16,8 @@ namespace Core
 			for (std::vector<T>::size_type t = 0; t < v1.size(); ++t)
 			{
 				if (v1[t] != v2[t]) return false;
-			}
+			} 
+
 			return true;
 		}
 

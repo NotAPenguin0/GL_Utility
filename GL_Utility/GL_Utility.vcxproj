@@ -28,7 +28,6 @@
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Math.cpp" />
-    <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ScreenSize.cpp" />
@@ -47,7 +46,6 @@
     <ClInclude Include="Exception.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Math.h" />
-    <ClInclude Include="Polygon.h" />
     <ClInclude Include="RegularPolygon.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ScreenSize.h" />
