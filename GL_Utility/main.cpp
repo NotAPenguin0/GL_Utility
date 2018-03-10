@@ -68,6 +68,8 @@ int main()
 	{
 		auto window = Renderer::Init(600, 600, "GL Utility");
 
+		//I'm changing something here, does this appear on github?
+
 		glEnable(GL_DEBUG_OUTPUT);
 		glDebugMessageCallback((GLDEBUGPROC)MessageCallback, 0);
 	
