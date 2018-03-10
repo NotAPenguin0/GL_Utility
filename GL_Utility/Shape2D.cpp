@@ -102,6 +102,7 @@ namespace Core
 
 		void Shape2D::release()
 		{
+			m_vertices.clear();
 			glDeleteBuffers(1, &m_buffer);
 			m_buffer = 0;
 		}

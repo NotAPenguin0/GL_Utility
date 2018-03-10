@@ -1,9 +1,12 @@
 #ifndef _REGULAR_POLYGON_H_
 #define _REGULAR_POLYGON_H_
 
-#include "Polygon.h"
+
 #include "Math.h"
 #include "Utility.h"
+#include "Shape2D.h"
+
+#include <ctime>
 
 namespace Core
 {
@@ -17,7 +20,6 @@ namespace Core
 			RegularPolygon(Vertex middle, unsigned int n, radius_type radius, GLenum usage = GL_STATIC_DRAW);
 
 		private:
-
 			std::vector<Vertex> calculateVertices(Vertex middle, radius_type radius, unsigned int n) const;
 
 			radius_type m_radius;

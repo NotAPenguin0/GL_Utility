@@ -15,7 +15,6 @@
     <ClCompile Include="Angle.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
     <ClCompile Include="Shape2D.cpp" />
-    <ClCompile Include="Line.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\glinit.h" />
@@ -34,6 +33,5 @@
     <ClInclude Include="RegularPolygon.h" />
     <ClInclude Include="Shape2D.h" />
     <ClInclude Include="Utility.h" />
-    <ClInclude Include="Line.h" />
   </ItemGroup>
 </Project>

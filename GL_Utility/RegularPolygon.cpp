@@ -14,16 +14,15 @@ namespace Core
 		{
 			const Vertex::value_type z = middle.z();
 
-			
 			//Get the radius
 			float r = radius;
 			//Get the middle coords
 			float Mx = middle.x();
 			float My = middle.y();
 			//Get the angle we are using
-			float a = Math::AngleOfRegularNPolygon(n);
-			float b = Math::Supplement(a);
-			float c = Math::Complement(a);
+			Math::Angle a = Math::AngleOfRegularNPolygon(n);
+			Math::Angle b = Math::Supplement(a);
+			Math::Angle c = Math::Complement(a);
 
 			std::vector<Vertex> vertices;
 
@@ -35,8 +34,8 @@ namespace Core
 			do
 			{
 				Vertex current;
-				current.x() = cos(glm::radians(c - (count - 1) * b)) * r + Mx; //2+2=4-1=3 QUICK MATHS
-				current.y() = sin(glm::radians(c - (count - 1) * b)) * r + My;
+				current.x() = cos(glm::radians(c.degrees() - (count - 1) * b)) * r + Mx; //2+2=4-1=3 QUICK MATHS
+				current.y() = sin(glm::radians(c.degrees() - (count - 1) * b)) * r + My;
 				current.z() = z;
 
 				vertices.push_back(current);

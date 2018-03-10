@@ -4,7 +4,7 @@
 #include <cmath>
 
 #include "Vertex.h"
-#include "Line.h"
+#include "Angle.h"
 
 namespace Core
 {
@@ -20,10 +20,10 @@ namespace Core
 			return (val - old_min) / (old_max - old_min) * (new_max - new_min) + new_min;
 		}
 
-		float AngleOfRegularNPolygon(unsigned int n);
+		Angle AngleOfRegularNPolygon(unsigned int n);
 
-		float Complement(float a);
-		float Supplement(float a);
+		Angle Complement(Angle const& a);
+		Angle Supplement(Angle const& a);
 
 		Vertex Middle(Vertex const& v1, Vertex const& v2);
 	};

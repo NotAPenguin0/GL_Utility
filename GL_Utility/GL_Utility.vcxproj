@@ -25,7 +25,6 @@
     <ClCompile Include="common\logpp\log++.cpp" />
     <ClCompile Include="common\shader\Shader.cpp" />
     <ClCompile Include="Exception.cpp" />
-    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
@@ -44,7 +43,6 @@
     <ClInclude Include="common\logpp\rlutil.h" />
     <ClInclude Include="common\shader\Shader.h" />
     <ClInclude Include="Exception.h" />
-    <ClInclude Include="Line.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="RegularPolygon.h" />
     <ClInclude Include="Renderer.h" />

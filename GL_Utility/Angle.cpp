@@ -3,7 +3,7 @@
 namespace Core
 {
 
-	namespace Geometry
+	namespace Math
 	{
 
 		const Angle::degrees_type Angle::MAX_DEGREES = 360;
