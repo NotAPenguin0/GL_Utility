@@ -68,10 +68,12 @@ int main()
 	{
 		auto window = Renderer::Init(600, 600, "GL Utility");
 
+		logpp::Console::debug(Math::MapToRange(63.5f, 0.0f, 127.0f, -1.0f, 1.0f));
+
 		//I'm changing something here, does this appear on GitHub? -> Hell yea it works!
 
 		glEnable(GL_DEBUG_OUTPUT);
-		glDebugMessageCallback((GLDEBUGPROC)MessageCallback, 0);
+	//	glDebugMessageCallback((GLDEBUGPROC)MessageCallback, 0);
 	
 		std::vector<std::unique_ptr<Shape2D> > shapes;
 

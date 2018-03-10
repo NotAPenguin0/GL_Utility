@@ -59,7 +59,7 @@ namespace logpp
 		inline static void debug(T data, Color clr = Color::LIGHTGREEN)
 		{
 			rlutil::setColor(static_cast<int>(clr));
-			std::cout << "[WARNING]: " << data << "\n";
+			std::cout << "[DEBUG]: " << data << "\n";
 			rlutil::setColor(static_cast<int>(defaultColor));
 		}
 		/*Prints a yellow warning message*/
@@ -70,7 +70,7 @@ namespace logpp
 			if (!debuggingEnabled)
 				return;
 			rlutil::setColor(static_cast<int>(clr));
-			std::cout << "[DEBUG]: " << data << "\n";
+			std::cout << "[WARNING]: " << data << "\n";
 			rlutil::setColor(static_cast<int>(defaultColor));
 		}
 		/*Prints a white log message*/
