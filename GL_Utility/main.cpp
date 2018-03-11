@@ -10,14 +10,9 @@
 #include <memory>
 
 //#TODO:
-//1. Fix warnings
+//1. Fix warnings -> #DONE
 //TODO list COMPLETE: learnopengl.com -> add features
 
-
-
-
-//#FIXME:
-//1. Crash when calling Circle::draw() -> If Todo #6 is implemented, this is not needed anymore -> FIXED
 
 void MessageCallback(GLenum source,
 	GLenum type,
@@ -53,7 +48,12 @@ int main()
 //		glDebugMessageCallback((GLDEBUGPROC)MessageCallback, nullptr);
 	
 		std::vector<std::unique_ptr<Shape2D> > shapes;
-//		shapes.push_back(std::unique_ptr<Shape2D>(new Circle(Vertex(0, 0), 1, Circle::Precision(10))));
+		shapes.push_back(std::unique_ptr<Shape2D>(new Triangle(
+			glm::vec3(-1.0f, -1.0f, 0.0f), 
+			glm::vec3(1.0f, -1.0f, 0.0f), 
+			glm::vec3(0.0f, 1.0f, 0.0f)
+		)));
+
 
 		Shader mainShader;
 		std::string base = "C:/Users/michi_000/Desktop/C++/OpenGL/GL_Utility/x64/Debug/";
@@ -61,13 +61,18 @@ int main()
 
 		mainShader.load(vtx, frag);
 
-		glm::mat4 model;
+//		for (auto & shape : shapes)
+//		{
+	//		shape->setShader(&mainShader);
+//		}
+
+		glm::mat4 model(1.0f);
 		model = glm::rotate(model, Math::Angle(-55.0f).radians(), glm::vec3(1.0f, 0.0f, 0.0f));
 
-		glm::mat4 view;
+		glm::mat4 view(1.0f);
 		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -0.3f));
-
-		glm::mat4 projection;
+		
+		glm::mat4 projection(1.0f);
 		projection = glm::perspective(Math::Angle(45.0f).radians(), 800.0f / 600.0f, 0.1f, 100.0f);
 
 		static const float pi = 3.14159265f;
@@ -79,6 +84,10 @@ int main()
 			Renderer::setClearColor((Core::Misc::Color((float)(std::sin(time * pi / 3) / 2 + 0.5), (float)(std::sin(time + 2 * pi  / 3) / 2 + 0.5), (float)(std::sin(time + 4 * pi / 3) / 2 + 0.5))));
 
 			mainShader.setUniform("globalTime", (float)glfwGetTime());
+
+			mainShader.setUniform("model", model);
+			mainShader.setUniform("view", view);
+			mainShader.setUniform("projection", projection);
 
 			Renderer::clear();
 
@@ -95,15 +104,16 @@ int main()
 	catch (Core::Misc::Exception e)
 	{
 		logpp::Console::error(e.what());
+		std::cin.get();
 	}
 	catch (Core::Shader::Exception e)
 	{
 		logpp::Console::error(e.what());
+		std::cin.get();
 	}
 
 	glfwTerminate();
 
-	std::cin.get();
 
 	return 0;
 }

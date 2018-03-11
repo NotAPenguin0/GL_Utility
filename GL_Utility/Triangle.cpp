@@ -36,7 +36,6 @@ namespace Core
 		{
 	
 		}
-
 		Triangle::Triangle(Vertex::value_type const & x1, Vertex::value_type const & y1, Vertex::value_type const & z1,
 			Vertex::value_type const & x2, Vertex::value_type const & y2, Vertex::value_type const & z2,
 			Vertex::value_type const & x3, Vertex::value_type const & y3, Vertex::value_type const & z3, GLenum usage) 

@@ -16,7 +16,6 @@ namespace Core
 				logpp::Console::error(e.what());
 			}
 		}
-
 		Shape2D::Shape2D(std::vector<Vertex::value_type> const& vertices, GLenum usage)
 		{
 			m_vertices = generateVertexVector(vertices);
@@ -96,7 +95,7 @@ namespace Core
 			glEnableVertexAttribArray(ATTRIBUTE_VERTICES);
 			glBindBuffer(GL_ARRAY_BUFFER, m_buffer);
 			glVertexAttribPointer(ATTRIBUTE_VERTICES, VTX_PER_TRIANGLE, GL_FLOAT, GL_FALSE, 0, nullptr);
-			glDrawArrays(GL_TRIANGLES, 0, m_vertices.size());
+			glDrawArrays(GL_TRIANGLES, 0, (GLsizei)m_vertices.size());
 			glDisableVertexAttribArray(ATTRIBUTE_VERTICES);
 		}
 
@@ -135,12 +134,12 @@ namespace Core
 
 		std::vector<Vertex> Shape2D::generateVertexVector(std::vector<Vertex::value_type> const& v) const
 		{
-			std::vector<Vertex> vertex_array(v.size() / VTX_SIZE);
-			for (std::vector<Vertex::value_type>::size_type i = 0; i < v.size(); i++)
+
+			std::vector<Vertex> vertex_array;
+
+			for (std::vector<Vertex>::size_type i = 0; i < v.size() / VTX_SIZE; ++i)
 			{
-				vertex_array[i].x() = v[i * VTX_SIZE];
-				vertex_array[i].y() = v[i * VTX_SIZE + 1];
-				vertex_array[i].z() = v[i * VTX_SIZE + 2];
+				vertex_array.emplace_back(v[i * VTX_SIZE], v[i * VTX_SIZE + 1], v[i * VTX_SIZE + 2]);
 			}
 
 			return vertex_array;
