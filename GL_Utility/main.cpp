@@ -10,26 +10,7 @@
 #include <memory>
 
 //#TODO:
-//1. Add a value_type to Vertex class -> DONE
-//2. Change float to Vertex::value_type where appropriate -> DONE
-//3. Delete copy constructors for Triangle class, use move semantics instead -> 
-//4. Add formulas from circle to Math.h DONE
-//5. Add Polygon and RegularPolygon classes -> IN PROGRESS -> DONE
-//	5a) Polygon -> IN PROGRESS -> SEE ALSO 16 -> CANCELED
-//	5b) RegularPolygon -> DONE
-//6. Use RegularPolygon class to draw Circle -> DONE
-//7. Create base class where Circle, Triangle, Polygon, etc can derive from (ex Shape2D) -> IN PROGRESS -> DONE
-//8. Use this base class -> IN PROGRESS -> DONE
-//9. logpp templates -> IN PROGRESS -> DONE
-//10. gl error callback -> IN PROGRESS -> DONE
-//11. Add namespaces -> IN PROGRESS -> DONE
-//12. Add Angle class -> IN PROGRESS -> DONE
-//13. Use Angle class -> PUSH! -> DONE
-//14. Rename Geometry namespace? -> NAH
-//15. Triangle::operator- ->Shape2D::operator- -> CANCELED -> OPERATOR- DELETED
-//16. Polygon.cpp: Check valid vertices in constructor -> NEEDS THINKING -> THINKING DONE -> CHECKS ARE NOT NEEDED SO -> CANCELED
-//17. Polygon.cpp: Polygon::generateVertices(): Implement -> CANCELED
-// 
+//1. Fix warnings
 //TODO list COMPLETE: learnopengl.com -> add features
 
 
@@ -70,7 +51,6 @@ int main()
 
 		logpp::Console::debug(Math::MapToRange(63.5f, 0.0f, 127.0f, -1.0f, 1.0f));
 
-		//I'm changing something here, does this appear on GitHub? -> Hell yea it works!
 
 		glEnable(GL_DEBUG_OUTPUT);
 	//	glDebugMessageCallback((GLDEBUGPROC)MessageCallback, 0);
