@@ -1,10 +1,10 @@
 #ifndef _GL_INIT_FUNCTIONS_H_
 #define _GL_INIT_FUNCTIONS_H_
 
-#include "logpp\log++.h"
-
 #include <GL\glew.h>
 #include <GL\glfw3.h>
+
+#include "logpp\log++.h"
 
 namespace GLInit
 {
