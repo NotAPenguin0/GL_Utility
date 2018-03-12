@@ -15,6 +15,7 @@
     <ClCompile Include="Angle.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
     <ClCompile Include="Shape2D.cpp" />
+    <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\glinit.h" />

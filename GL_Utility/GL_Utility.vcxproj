@@ -32,6 +32,7 @@
     <ClCompile Include="ScreenSize.cpp" />
     <ClCompile Include="Shape2D.cpp" />
     <ClCompile Include="Triangle.cpp" />
+    <ClCompile Include="Utility.cpp" />
     <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
