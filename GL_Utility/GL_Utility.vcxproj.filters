@@ -35,5 +35,6 @@
     <ClInclude Include="Shape2D.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="sse_util.h" />
+    <ClInclude Include="assert.h" />
   </ItemGroup>
 </Project>

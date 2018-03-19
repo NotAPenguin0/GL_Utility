@@ -9,29 +9,10 @@
 #include <GLM\gtc\matrix_transform.hpp>
 #include <memory>
 
-#include <xmmintrin.h>
 
+#include "assert.h"
 
-#define ENABLE_ASSERT
-
-
-//#undef ENABLE_ASSERT
-
-#undef ASSERT
-#ifdef ENABLE_ASSERT
-#define ASSERT(condition, str) if (condition) \
-{ \
-} \
-else \
-{ \
-logpp::Console::error(std::string("Assertion failed at location: ") + std::string(__FILE__) + "::" + std::to_string(__LINE__) + "\nCondition: " + #condition + "\nMessage: " + #str); \
-}
-
-#else
-#define ASSERT(condition, str)
-
-#endif
-
+#include "sse_util.h"
 
 
 //#TODO:
@@ -52,10 +33,6 @@ void MessageCallback(GLenum source,
 		type, severity, message);
 }
 
-__m128 add__m128(__m128 const& v1, __m128 const& v2)
-{
-	return _mm_add_ps(v1, v2);
-}
 
 
 int main()
@@ -69,11 +46,15 @@ int main()
 	using Geometry::Shape2D;
 	using Geometry::Circle;
 
-	ASSERT(false, "false is not true");
 
 	__m128 v = _mm_set_ps(2.8f, 4.1f, 1.6f, 22.5f);
 
 	__m128 v2 = _mm_set_ps(3, 1, 8, 2);
+
+	auto v3 = sse::add_m128(v, v2);
+
+	float x = sse::_m128_element(v3, 0);
+	float err = sse::_m128_element(v3, 50);
 
 	try
 	{
