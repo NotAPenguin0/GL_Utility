@@ -28,6 +28,11 @@ namespace sse
 	{
 		return _mm_div_ps(v1, v2);
 	}
+
+	inline __m128 _m128_element(__m128 v, unsigned int idx)
+	{
+
+	}
 }
 
 #endif // ifndef _SSE_UTILITY_H_
