@@ -4,10 +4,35 @@
 #include "Math.h"
 #include "Circle.h"
 #include "RegularPolygon.h"
+#include "Utility.h"
 
 #include <GLM\gtc\matrix_transform.hpp>
-
 #include <memory>
+
+#include <xmmintrin.h>
+
+
+#define ENABLE_ASSERT
+
+
+//#undef ENABLE_ASSERT
+
+#undef ASSERT
+#ifdef ENABLE_ASSERT
+#define ASSERT(condition, str) if (condition) \
+{ \
+} \
+else \
+{ \
+logpp::Console::error(std::string("Assertion failed at location: ") + std::string(__FILE__) + "::" + std::to_string(__LINE__) + "\nCondition: " + #condition + "\nMessage: " + #str); \
+}
+
+#else
+#define ASSERT(condition, str)
+
+#endif
+
+
 
 //#TODO:
 //1. Fix warnings -> #DONE
@@ -27,10 +52,16 @@ void MessageCallback(GLenum source,
 		type, severity, message);
 }
 
+__m128 add__m128(__m128 const& v1, __m128 const& v2)
+{
+	return _mm_add_ps(v1, v2);
+}
 
 
 int main()
 {
+	static const glm::mat4 Identity(1.0f);
+
 	using namespace Core;
 
 	using Geometry::Triangle;
@@ -38,7 +69,11 @@ int main()
 	using Geometry::Shape2D;
 	using Geometry::Circle;
 
-	
+	ASSERT(false, "false is not true");
+
+	__m128 v = _mm_set_ps(2.8f, 4.1f, 1.6f, 22.5f);
+
+	__m128 v2 = _mm_set_ps(3, 1, 8, 2);
 
 	try
 	{
@@ -48,12 +83,83 @@ int main()
 //		glDebugMessageCallback((GLDEBUGPROC)MessageCallback, nullptr);
 	
 		std::vector<std::unique_ptr<Shape2D> > shapes;
-		shapes.push_back(std::unique_ptr<Shape2D>(new Triangle(
+/*		shapes.push_back(std::unique_ptr<Shape2D>(new Triangle(
 			glm::vec3(-1.0f, -1.0f, 0.0f), 
 			glm::vec3(1.0f, -1.0f, 0.0f), 
 			glm::vec3(0.0f, 1.0f, 0.0f)
-		)));
+		))); */
 
+		float vertices[] = {
+			-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+			0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+			0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+			0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+			-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+			-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+
+			-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+			0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+			0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+			0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+			-0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+			-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+
+			-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+			-0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+			-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+			-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+			-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+			-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+			0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+			0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+			0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+			0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+			0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+			0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+			-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+			0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+			0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+			0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+			-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+			-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+
+			-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+			0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+			0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+			0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+			-0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+			-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+		};
+
+		// world space positions of our cubes
+		glm::vec3 cubePositions[] = {
+			glm::vec3(0.0f,  0.0f,  0.0f),
+			glm::vec3(2.0f,  5.0f, -15.0f),
+			glm::vec3(-1.5f, -2.2f, -2.5f),
+			glm::vec3(-3.8f, -2.0f, -12.3f),
+			glm::vec3(2.4f, -0.4f, -3.5f),
+			glm::vec3(-1.7f,  3.0f, -7.5f),
+			glm::vec3(1.3f, -2.0f, -2.5f),
+			glm::vec3(1.5f,  2.0f, -2.5f),
+			glm::vec3(1.5f,  0.2f, -1.5f),
+			glm::vec3(-1.3f,  1.0f, -1.5f)
+		};
+
+		unsigned int VBO, VAO;
+		glGenVertexArrays(1, &VAO);
+		glGenBuffers(1, &VBO);
+
+		glBindVertexArray(VAO);
+
+		glBindBuffer(GL_ARRAY_BUFFER, VBO);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+		// position attribute
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), nullptr);
+		glEnableVertexAttribArray(0);
+		
 
 		Shader mainShader;
 		std::string base = "C:/Users/michi_000/Desktop/C++/OpenGL/GL_Utility/x64/Debug/";
@@ -66,16 +172,24 @@ int main()
 	//		shape->setShader(&mainShader);
 //		}
 
-		glm::mat4 model(1.0f);
+		glm::mat4 model { Identity };
 		model = glm::rotate(model, Math::Angle(-55.0f).radians(), glm::vec3(1.0f, 0.0f, 0.0f));
 
-		glm::mat4 view(1.0f);
-		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -0.3f));
+		glm::mat4 view { Identity };
+//		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -0.3f));
 		
-		glm::mat4 projection(1.0f);
+		glm::mat4 projection { Identity };
 		projection = glm::perspective(Math::Angle(45.0f).radians(), 800.0f / 600.0f, 0.1f, 100.0f);
 
+		std::cout << model << std::endl;
+		std::cout << view << std::endl;
+		std::cout << projection;
+
 		static const float pi = 3.14159265f;
+
+		mainShader.use();
+		
+		
 
 		do
 		{
@@ -85,15 +199,27 @@ int main()
 
 			mainShader.setUniform("globalTime", (float)glfwGetTime());
 
-			mainShader.setUniform("model", model);
-			mainShader.setUniform("view", view);
-			mainShader.setUniform("projection", projection);
 
 			Renderer::clear();
 
 			for (auto & shape : shapes)
 			{
 				Renderer::render(*shape);
+			}
+
+			glBindVertexArray(VAO);
+			for (unsigned int i = 0; i < 10; i++)
+			{
+				// calculate the model matrix for each object and pass it to shader before drawing
+				glm::mat4 model { Identity };
+				model = glm::translate(model, cubePositions[i]);
+				float angle = 20.0f * i;
+				model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+				mainShader.setUniform("model", model);
+				mainShader.setUniform("view", view);
+				mainShader.setUniform("projection", projection);
+
+				glDrawArrays(GL_TRIANGLES, 0, 36);
 			}
 
 

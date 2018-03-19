@@ -49,6 +49,7 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ScreenSize.h" />
     <ClInclude Include="Shape2D.h" />
+    <ClInclude Include="sse_util.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="Vertex.h" />

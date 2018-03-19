@@ -4,6 +4,8 @@
 #include <vector>
 #include <iostream>
 
+#include <GLM\glm.hpp>
+
 namespace Core
 {
 	namespace Misc
@@ -30,6 +32,8 @@ namespace Core
 			std::cout << "}";
 		}
 	}
+
+	std::ostream& operator<<(std::ostream& out, glm::mat4 const& mat);
 }
 
 #endif
