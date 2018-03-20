@@ -14,6 +14,8 @@
 
 #include "sse_util.h"
 
+#include "stack_allocator.h"
+
 
 //#TODO:
 //1. Fix warnings -> #DONE
@@ -53,8 +55,10 @@ int main()
 
 	auto v3 = sse::add_m128(v, v2);
 
-	float x = sse::_m128_element(v3, 0);
-	float err = sse::_m128_element(v3, 50);
+	float x = sse::element_m128(v3, 0);
+	float err = sse::element_m128(v3, 50);
+
+	mem::stack_allocator<int> alloc(3 * sizeof(int));
 
 	try
 	{
