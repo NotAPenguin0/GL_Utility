@@ -15,6 +15,7 @@
 #include "sse_util.h"
 
 #include "test_allocator.h"
+#include "stack_allocator.h"
 
 
 //#TODO:
@@ -72,6 +73,16 @@ int main()
 	catch (const std::exception&)
 	{
 
+	}
+
+/*Stack allocator*/
+	try
+	{
+		mem::stack_allocator alloc(3 * sizeof(int));
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what();
 	}
 
 
