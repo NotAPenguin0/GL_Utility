@@ -3,6 +3,8 @@
 #include <cstdint> //for std::uint32_t
 #include <cmath>
 
+#include "custom_deleters.h"
+
 #ifdef ALLOCATOR_DEBUG
 #include <iostream>
 #endif
@@ -18,7 +20,7 @@ namespace mem
 		explicit stack_allocator(uint32_t stack_size_bytes);
 		~stack_allocator();
 
-		void* allocate(uint32_t bytes);
+		std::shared_ptr<void> allocate(uint32_t bytes);
 
 		//returns a marker to the top of the stack
 		marker top();
@@ -36,6 +38,7 @@ namespace mem
 		void* m_root;
 		void* m_top;
 	};
+
 
 	stack_allocator::stack_allocator(uint32_t stack_size_bytes) : max_size(stack_size_bytes), size(0)
 	{
@@ -55,7 +58,7 @@ namespace mem
 		clear();
 	}
 
-	void* stack_allocator::allocate(uint32_t bytes)
+	std::shared_ptr<void> stack_allocator::allocate(uint32_t bytes)
 	{
 		if (size + bytes > max_size)
 		{
@@ -76,7 +79,7 @@ namespace mem
 		std::cout << "\n";
 #endif
 		//return pointer to newly allocated object
-		return obj;
+		return std::shared_ptr<void>(obj, &dont_delete<void>);
 	}
 
 	void stack_allocator::clear()

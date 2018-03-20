@@ -7,10 +7,10 @@
 #include <iostream>
 #endif
 
+#include "custom_deleters.h"
+
 namespace mem
 {
-	/*Custom deleter for shared_ptr returnet by stack_allocator::get()*/
-	template<typename U> void dont_delete(U*) { /*do nothing*/ }
 
 	template<typename T>
 	class test_allocator

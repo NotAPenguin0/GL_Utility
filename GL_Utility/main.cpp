@@ -82,19 +82,22 @@ int main()
 		std::cout << "----STACK ALLOCATOR----\n";
 
 		mem::stack_allocator alloc(10 * sizeof(int));
-		auto x = (int*)alloc.allocate(sizeof(int));
+		auto q = alloc.allocate(sizeof(int)); //x is a std::shared_ptr<void> with empty deleter
+
+		auto a = q.get(); //a is a void*
+		int* b = (int*)a; //b is a int*
+
+		auto x = std::shared_ptr<int>(b, &mem::dont_delete<int>); //#TODO casting from shared_ptr<void> to shared_ptr<T> to a function in mem namespace
 
 		auto mark = alloc.top();
 
-		auto y = (int*)alloc.allocate(sizeof(int));
+//		auto y = alloc.allocate(sizeof(int));
 
 //		alloc.free_to_marker(mark);
 
 		*x = 9;
-		*y = 28;
 
 		std::cout << "x = " << *x << "\n";
-		std::cout << "y = " << *y << "\n";
 
 
 		std::cout << "-----------------------\n";

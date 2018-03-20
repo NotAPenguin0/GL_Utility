@@ -39,5 +39,6 @@
     <ClInclude Include="vector4.h" />
     <ClInclude Include="test_allocator.h" />
     <ClInclude Include="stack_allocator.h" />
+    <ClInclude Include="custom_deleters.h" />
   </ItemGroup>
 </Project>
