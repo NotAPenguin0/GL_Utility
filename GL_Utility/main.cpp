@@ -78,13 +78,33 @@ int main()
 /*Stack allocator*/
 	try
 	{
-		mem::stack_allocator alloc(3 * sizeof(int));
+		std::cout << "\n\n\n";
+		std::cout << "----STACK ALLOCATOR----\n";
+
+		mem::stack_allocator alloc(10 * sizeof(int));
+		auto x = (int*)alloc.allocate(sizeof(int));
+
+		auto mark = alloc.top();
+
+		auto y = (int*)alloc.allocate(sizeof(int));
+
+//		alloc.free_to_marker(mark);
+
+		*x = 9;
+		*y = 28;
+
+		std::cout << "x = " << *x << "\n";
+		std::cout << "y = " << *y << "\n";
+
+
+		std::cout << "-----------------------\n";
 	}
 	catch (const std::exception& e)
 	{
 		std::cerr << e.what();
 	}
 
+	std::cin.get();
 
 	try
 	{

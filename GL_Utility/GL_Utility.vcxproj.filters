@@ -16,7 +16,6 @@
     <ClCompile Include="RegularPolygon.cpp" />
     <ClCompile Include="Shape2D.cpp" />
     <ClCompile Include="Utility.cpp" />
-    <ClCompile Include="stack_allocator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\glinit.h" />
@@ -38,6 +37,7 @@
     <ClInclude Include="sse_util.h" />
     <ClInclude Include="assert.h" />
     <ClInclude Include="vector4.h" />
+    <ClInclude Include="test_allocator.h" />
     <ClInclude Include="stack_allocator.h" />
   </ItemGroup>
 </Project>

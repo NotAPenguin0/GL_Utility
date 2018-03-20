@@ -57,7 +57,7 @@ namespace mem
 		{
 			delete[] m_data;
 #ifdef ALLOCATOR_DEBUG
-			std::cout << "Deleted " << sizeof(T) * m_amount << " bytes";
+			std::cout << "Deleted " << sizeof(T) * m_amount << " bytes\n";
 #endif
 		}
 

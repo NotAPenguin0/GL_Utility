@@ -31,7 +31,6 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ScreenSize.cpp" />
     <ClCompile Include="Shape2D.cpp" />
-    <ClCompile Include="stack_allocator.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="Vertex.cpp" />
@@ -53,6 +52,7 @@
     <ClInclude Include="Shape2D.h" />
     <ClInclude Include="sse_util.h" />
     <ClInclude Include="stack_allocator.h" />
+    <ClInclude Include="test_allocator.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="vector4.h" />
