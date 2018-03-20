@@ -3,7 +3,7 @@
 #include <cstdint> //for std::uint32_t
 #include <cmath>
 
-#include "custom_deleters.h"
+#include "mem_util.h"
 
 #ifdef ALLOCATOR_DEBUG
 #include <iostream>

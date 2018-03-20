@@ -44,7 +44,7 @@
     <ClInclude Include="common\logpp\log++.h" />
     <ClInclude Include="common\logpp\rlutil.h" />
     <ClInclude Include="common\shader\Shader.h" />
-    <ClInclude Include="custom_deleters.h" />
+    <ClInclude Include="mem_util.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="RegularPolygon.h" />
