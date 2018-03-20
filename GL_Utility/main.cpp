@@ -14,7 +14,7 @@
 
 #include "sse_util.h"
 
-#include "stack_allocator.h"
+#include "test_allocator.h"
 
 
 //#TODO:
@@ -58,7 +58,22 @@ int main()
 	float x = sse::element_m128(v3, 0);
 	float err = sse::element_m128(v3, 50);
 
-	mem::stack_allocator<int> alloc(3 * sizeof(int));
+/*Allocator debugging*/
+	try
+	{
+		mem::test_allocator<int> alloc(3);
+
+		auto root = alloc.get();
+		auto lastelem = alloc.get(2);
+		*lastelem = 5;
+		std::cout << *alloc.get(2) << std::endl;
+
+	}
+	catch (const std::exception&)
+	{
+
+	}
+
 
 	try
 	{
