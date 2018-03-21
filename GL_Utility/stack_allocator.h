@@ -22,11 +22,18 @@ namespace mem
 
 		std::shared_ptr<void> allocate(uint32_t bytes);
 
+		//overload for allocate() returns a shared pointer to T, memory will be allocated by the other version of allocate()
+		template<typename T> std::shared_ptr<T> allocate();
+
 		//returns a marker to the top of the stack
 		marker top();
 
 		//rolls back stack to specified marker m
 //		void free_to_marker(marker m);
+
+		//deallocates memory if it is at the top of the stack, and sets the pointer passed to nullptr
+		template<typename T>
+		void deallocate(T* data);
 
 		//deallocates all memory allocated by the stack
 		void clear();
@@ -46,9 +53,9 @@ namespace mem
 		m_top = m_root; //set top to root, as currently, nothing is in use
 #ifdef ALLOCATOR_DEBUG
 		std::cout << "stack_allocator::stack_allocator(): allocated " << stack_size_bytes << " bytes from memory location ";
-		std::cout.setf(std::ios::hex);
-		std::cout << (marker)m_top;
-		std::cout.unsetf(std::ios::hex);
+//		std::cout.setf(std::ios::hex);
+		std::cout << m_top;
+//		std::cout.unsetf(std::ios::hex);
 		std::cout << "\n";
 #endif
 	}
@@ -68,14 +75,14 @@ namespace mem
 			return nullptr;
 		}
 
-		void* obj = (unsigned char*)m_top + 1;
+		void* obj = m_top;
 		//move the top pointer
 		m_top = (unsigned char*)m_top + bytes;
 #ifdef ALLOCATOR_DEBUG
 		std::cout << "stack_allocator::allocate(): allocated " << bytes << " bytes from memory location ";
-		std::cout.setf(std::ios::hex);
-		std::cout << (marker)obj;
-		std::cout.unsetf(std::ios::hex);
+//		std::cout.setf(std::ios::hex);
+		std::cout << obj;
+//		std::cout.unsetf(std::ios::hex);
 		std::cout << "\n";
 #endif
 		//return pointer to newly allocated object
@@ -88,9 +95,9 @@ namespace mem
 		::operator delete(m_root, max_size);
 #ifdef ALLOCATOR_DEBUG
 		std::cout << "stack_allocator::clear(): deallocated " << max_size << " bytes from memory location ";
-		std::cout.setf(std::ios::hex);
-		std::cout << (marker)m_root;
-		std::cout.unsetf(std::ios::hex);
+//		std::cout.setf(std::ios::hex);
+		std::cout << m_root;
+//		std::cout.unsetf(std::ios::hex);
 		std::cout << "\n";
 #endif
 	}
@@ -116,4 +123,33 @@ namespace mem
 #endif
 	}
 */
+
+	template<typename T>
+	inline std::shared_ptr<T> stack_allocator::allocate()
+	{
+		return std::shared_ptr<T>(cast_from_void<T>(allocate(sizeof(T))));
+	}
+
+	template<typename T>
+	void stack_allocator::deallocate(T* data)
+	{
+		//#TODO: Ownership checking ("is this data mine?")
+		data->T::~T();
+
+		auto bytes = sizeof(T);
+
+		//Move top
+		m_top = (unsigned char*)m_top - bytes;
+
+#ifdef ALLOCATOR_DEBUG
+		std::cout << "stack_allocator::deallocate(): deallocated " << bytes << " bytes from memory location ";
+//		std::cout.setf(std::ios::hex);
+		std::cout << m_top;
+//		std::cout.unsetf(std::ios::hex);
+		std::cout << "\n";
+#endif
+
+		data = nullptr;
+	}
+
 };
