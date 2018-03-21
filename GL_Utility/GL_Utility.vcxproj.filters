@@ -37,9 +37,9 @@
     <ClInclude Include="sse_util.h" />
     <ClInclude Include="assert.h" />
     <ClInclude Include="vector4.h" />
-    <ClInclude Include="test_allocator.h" />
-    <ClInclude Include="stack_allocator.h" />
-    <ClInclude Include="mem_util.h" />
-    <ClInclude Include="pool_allocator.h" />
+    <ClInclude Include="pool_allocator.hpp" />
+    <ClInclude Include="mem_util.hpp" />
+    <ClInclude Include="stack_allocator.hpp" />
+    <ClInclude Include="test_allocator.hpp" />
   </ItemGroup>
 </Project>

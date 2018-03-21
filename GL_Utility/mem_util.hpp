@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 namespace mem
 {
 	/*Custom deleter that does nothing*/

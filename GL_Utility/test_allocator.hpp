@@ -7,7 +7,7 @@
 #include <iostream>
 #endif
 
-#include "mem_util.h"
+#include "mem_util.hpp"
 
 namespace mem
 {

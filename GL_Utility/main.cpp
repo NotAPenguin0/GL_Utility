@@ -14,9 +14,9 @@
 
 #include "sse_util.h"
 
-#include "test_allocator.h"
-#include "stack_allocator.h"
-#include "pool_allocator.h"
+#include "test_allocator.hpp"
+#include "stack_allocator.hpp"
+#include "pool_allocator.hpp"
 
 
 //#TODO:
@@ -132,7 +132,7 @@ int main()
 		std::cout << "\n\n\n";
 		std::cout << "----POOL ALLOCATOR----\n";
 
-		mem::pool_allocator<destructor_print> alloc;
+		mem::pool_allocator<destructor_print> alloc(10);
 
 		std::cout << "----------------------";
 	}

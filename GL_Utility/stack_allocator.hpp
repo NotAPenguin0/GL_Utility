@@ -3,7 +3,7 @@
 #include <cstdint> //for std::uint32_t
 #include <cmath>
 
-#include "mem_util.h"
+#include "mem_util.hpp"
 #include "common/logpp/log++.h"
 
 #ifdef ALLOCATOR_DEBUG
@@ -20,6 +20,8 @@ namespace mem
 
 		explicit stack_allocator(uint32_t stack_size_bytes);
 		~stack_allocator();
+
+		//#TODO: Implement move/copy constructors
 
 		std::shared_ptr<void> allocate(uint32_t bytes);
 
