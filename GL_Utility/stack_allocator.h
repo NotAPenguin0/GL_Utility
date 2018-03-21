@@ -4,6 +4,7 @@
 #include <cmath>
 
 #include "mem_util.h"
+#include "common/logpp/log++.h"
 
 #ifdef ALLOCATOR_DEBUG
 #include <iostream>
@@ -70,7 +71,7 @@ namespace mem
 		if (size + bytes > max_size)
 		{
 #ifdef ALLOCATOR_DEBUG
-			std::cout << "stack_allocator::allocate(): trying to allocate " << bytes << " bytes. Stack is too small\n";
+			logpp::Console::error("stack_allocator::allocate(): trying to allocate " + std::to_string(bytes) + " bytes. Stack is too small");
 #endif
 			return nullptr;
 		}
@@ -127,12 +128,25 @@ namespace mem
 	template<typename T>
 	std::shared_ptr<T> stack_allocator::allocate()
 	{
-		return std::shared_ptr<T>(cast_from_void<T>(allocate(sizeof(T), &dont_delete<T>)));
+		return std::shared_ptr<T>(cast_from_void<T>(allocate(sizeof(T)), &dont_delete<T>));
 	}
 
 	template<typename T>
 	void stack_allocator::deallocate(T* data)
 	{
+		static_assert(!std::is_same_v<T, void>, "stack_allocator::deallocate(T* data): T cannot be void");
+
+		if (data == nullptr)
+		{
+			logpp::Console::error("stack_allocator::deallocate(T* data): data is nullptr");
+			return;
+		}
+		if ((void*)data < m_root || (void*)data >= (void*)top())
+		{
+			logpp::Console::error("stack_allocator::deallocate(T* data): data is not owned by this allocator");
+			return;
+		}
+
 		//#TODO: Ownership checking ("is this data mine?")
 		data->T::~T();
 

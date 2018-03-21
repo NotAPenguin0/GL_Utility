@@ -68,10 +68,10 @@ int main()
 	auto v3 = sse::add_m128(v, v2);
 
 	float x = sse::element_m128(v3, 0);
-	float err = sse::element_m128(v3, 50);
+//	float err = sse::element_m128(v3, 50);
 
 /*Allocator debugging*/
-	try
+/*	try
 	{
 		mem::test_allocator<int> alloc(3);
 
@@ -81,12 +81,13 @@ int main()
 		std::cout << *alloc.get(2) << std::endl;
 
 
-		/*BAD ALLOCATOR*/
+		//BAD ALLOCATOR
 	}
 	catch (const std::exception&)
 	{
 
 	}
+*/
 
 
 /*Stack allocator*/ /*GOOD ALLOCATOR*/
@@ -105,7 +106,17 @@ int main()
 		alloc.deallocate(p.get());
 		alloc.deallocate(destr_identify.get());
 
+		int* nll = nullptr;
+
+		alloc.deallocate(nll);
+
+		alloc.allocate<some_huge_class>();
+
 		auto ptr = alloc.allocate<int>();
+
+		auto* some_ptr_not_owned_by_alloc = new int { 5 };
+
+		alloc.deallocate(some_ptr_not_owned_by_alloc);
 
 
 		std::cout << "-----------------------\n";
