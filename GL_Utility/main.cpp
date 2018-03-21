@@ -16,6 +16,7 @@
 
 #include "test_allocator.h"
 #include "stack_allocator.h"
+#include "pool_allocator.h"
 
 
 //#TODO:
@@ -41,6 +42,12 @@ class some_huge_class
 	long long lots_of_memory[123456789];
 };
 
+class destructor_print
+{
+public:
+	int m_id;
+	~destructor_print() { std::cout << "destructor_print::~destructor_print()\n"; }
+};
 
 int main()
 {
@@ -88,23 +95,35 @@ int main()
 		std::cout << "\n\n\n";
 		std::cout << "----STACK ALLOCATOR----\n";
 
-		mem::stack_allocator alloc(10 * sizeof(int));
-		auto x = mem::cast_from_void<int>(alloc.allocate(sizeof(int)));
+		mem::stack_allocator alloc(20 * sizeof(long long));
 
-		auto var = alloc.allocate(sizeof(long long));
-		auto y = mem::cast_from_void<long long>(var);
+		auto destr_identify = alloc.allocate<destructor_print>();
+		destr_identify->m_id = 42;
 
-		auto huge_alloc = alloc.allocate(sizeof(some_huge_class));
-		auto huge_data = mem::cast_from_void<some_huge_class>(huge_alloc);
+		auto p = alloc.allocate<double>();
 
-		*x = 9;
-		*y = 42;
+		alloc.deallocate(p.get());
+		alloc.deallocate(destr_identify.get());
 
-		std::cout << "x = " << *x << "\n";
-		std::cout << "y = " << *y << "\n";
+		auto ptr = alloc.allocate<int>();
 
 
 		std::cout << "-----------------------\n";
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what();
+	}
+
+/*Pool allocator*/ /*GOOD ALLOCATOR*/
+	try
+	{
+		std::cout << "\n\n\n";
+		std::cout << "----POOL ALLOCATOR----\n";
+
+		mem::pool_allocator<destructor_print> alloc();
+
+		std::cout << "----------------------"
 	}
 	catch (const std::exception& e)
 	{
