@@ -20,17 +20,30 @@ namespace mem
 		using size_type = uint32_t;
 
 		pool_allocator(int pool_size_elems);
+		~pool_allocator();
+
+		std::shared_ptr<T> allocate();
+
+		/*calls destructor and frees memory*/
+		void deallocate(T* data);
+
+		size_type size();
 	private:
+		size_type m_pool_size_elems;
+
 		void* m_data;
 		std::list<void*> m_free_data;
+
+//		std::list<void*>::iterator m_next_free;
 	};
 
 	template<typename T>
-	pool_allocator<T>::pool_allocator(int pool_size_elems)
+	pool_allocator<T>::pool_allocator(int pool_size_elems) : m_pool_size_elems(pool_size_elems)
 	{
 		auto bytes = sizeof(T) * pool_size_elems;
-
+		
 		m_data = ::operator new(bytes);
+
 #ifdef ALLOCATOR_DEBUG
 		std::cout << "pool_allocator::pool_allocator(): allocated " << bytes << " bytes\n";
 #endif
@@ -47,6 +60,64 @@ namespace mem
 		}
 #endif
 
+//		m_next_free = m_free_data.begin();
+	}
+
+	template<typename T>
+	pool_allocator<T>::~pool_allocator()
+	{
+		for (size_type idx = 0; idx < size(); ++idx)
+		{
+			auto obj = (T*)m_data + idx;
+
+			//if the object is not in the free list, we can safely destruct it
+			if (std::find(m_free_data.begin(), m_free_data.end(), (void*)obj) == m_free_data.end())
+			{
+//				obj->T::~T();
+			}
+		}
+
+		//delete allocated memory block
+		::operator delete((T*)m_data/*, size() * sizeof(T)*/);
+
+#ifdef ALLOCATOR_DEBUG
+		std::cout << "pool_allocator::~pool_allocator(): deallocated " << sizeof(T) * size() << " bytes\n";
+#endif
+	}
+
+	template<typename T>
+	typename pool_allocator<T>::size_type pool_allocator<T>::size()
+	{
+		return m_pool_size_elems;
+	}
+
+	template<typename T>
+	std::shared_ptr<T> pool_allocator<T>::allocate()
+	{
+		/*Pick first element of the free list, remove it from the free list and return it*/
+		if (m_free_data.empty())
+		{
+#ifdef ALLOCATOR_DEBUG
+			logpp::Console::error("pool_allocator::allocate(): pool is not large enough");
+#endif
+		}
+		auto data = *(m_free_data.begin());
+
+		m_free_data.erase(m_free_data.begin());
+
+#ifdef ALLOCATOR_DEBUG
+		std::cout << "pool_allocator::allocate(): allocated " << sizeof(T) << " bytes at memory location " << data << "\n";
+#endif
+
+		return cast_from_void<T>(std::shared_ptr<void>(data), &dont_delete<T>);
+	}
+
+	template<typename T>
+	void pool_allocator<T>::deallocate(T* data)
+	{
+		/*check if this is actually allocated data, if it is not a nullptr, and if the data belongs to this allocator
+		 *
+		 *If all these conditions are met, call the destructor and move it to the free list*/
 	}
 
 };

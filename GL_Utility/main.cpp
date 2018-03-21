@@ -134,7 +134,10 @@ int main()
 
 		mem::pool_allocator<destructor_print> alloc(10);
 
-		std::cout << "----------------------";
+		auto data = alloc.allocate();
+
+
+		std::cout << "----------------------\n";
 	}
 	catch (const std::exception& e)
 	{
