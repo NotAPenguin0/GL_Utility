@@ -36,6 +36,10 @@ void MessageCallback(GLenum source,
 		type, severity, message);
 }
 
+class some_huge_class
+{
+	long long lots_of_memory[123456789];
+};
 
 
 int main()
@@ -69,13 +73,16 @@ int main()
 		*lastelem = 5;
 		std::cout << *alloc.get(2) << std::endl;
 
+
+		/*BAD ALLOCATOR*/
 	}
 	catch (const std::exception&)
 	{
 
 	}
 
-/*Stack allocator*/
+
+/*Stack allocator*/ /*GOOD ALLOCATOR*/
 	try
 	{
 		std::cout << "\n\n\n";
@@ -86,6 +93,9 @@ int main()
 
 		auto var = alloc.allocate(sizeof(long long));
 		auto y = mem::cast_from_void<long long>(var);
+
+		auto huge_alloc = alloc.allocate(sizeof(some_huge_class));
+		auto huge_data = mem::cast_from_void<some_huge_class>(huge_alloc);
 
 		*x = 9;
 		*y = 42;
