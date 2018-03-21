@@ -123,7 +123,7 @@ int main()
 
 		mem::pool_allocator<destructor_print> alloc;
 
-		std::cout << "----------------------"
+		std::cout << "----------------------";
 	}
 	catch (const std::exception& e)
 	{

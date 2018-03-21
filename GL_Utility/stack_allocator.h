@@ -125,7 +125,7 @@ namespace mem
 */
 
 	template<typename T>
-	inline std::shared_ptr<T> stack_allocator::allocate()
+	std::shared_ptr<T> stack_allocator::allocate()
 	{
 		return std::shared_ptr<T>(cast_from_void<T>(allocate(sizeof(T), &dont_delete<T>)));
 	}
