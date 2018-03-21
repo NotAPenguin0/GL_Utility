@@ -47,6 +47,7 @@
     <ClInclude Include="mem_util.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="Math.h" />
+    <ClInclude Include="pool_allocator.h" />
     <ClInclude Include="RegularPolygon.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ScreenSize.h" />

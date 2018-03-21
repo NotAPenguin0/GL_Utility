@@ -117,11 +117,11 @@ int main()
 
 /*Pool allocator*/ /*GOOD ALLOCATOR*/
 	try
-	{
+	{ 
 		std::cout << "\n\n\n";
 		std::cout << "----POOL ALLOCATOR----\n";
 
-		mem::pool_allocator<destructor_print> alloc();
+		mem::pool_allocator<destructor_print> alloc;
 
 		std::cout << "----------------------"
 	}
@@ -132,7 +132,7 @@ int main()
 
 	std::cin.get();
 
-	try
+/*	try
 	{
 		auto window = Renderer::Init(800, 600, "GL Utility");
 
@@ -140,11 +140,11 @@ int main()
 //		glDebugMessageCallback((GLDEBUGPROC)MessageCallback, nullptr);
 	
 		std::vector<std::unique_ptr<Shape2D> > shapes;
-/*		shapes.push_back(std::unique_ptr<Shape2D>(new Triangle(
-			glm::vec3(-1.0f, -1.0f, 0.0f), 
-			glm::vec3(1.0f, -1.0f, 0.0f), 
-			glm::vec3(0.0f, 1.0f, 0.0f)
-		))); */
+//		shapes.push_back(std::unique_ptr<Shape2D>(new Triangle(
+//			glm::vec3(-1.0f, -1.0f, 0.0f), 
+//			glm::vec3(1.0f, -1.0f, 0.0f), 
+//			glm::vec3(0.0f, 1.0f, 0.0f)
+//		))); 
 
 		float vertices[] = {
 			-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -297,6 +297,6 @@ int main()
 
 	glfwTerminate();
 
-
+*/ //<-- Old rendering code, disabled as we are testing allocators now
 	return 0;
 }

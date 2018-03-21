@@ -40,5 +40,6 @@
     <ClInclude Include="test_allocator.h" />
     <ClInclude Include="stack_allocator.h" />
     <ClInclude Include="mem_util.h" />
+    <ClInclude Include="pool_allocator.h" />
   </ItemGroup>
 </Project>
