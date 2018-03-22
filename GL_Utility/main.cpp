@@ -132,13 +132,7 @@ int main()
 		std::cout << "\n\n\n";
 		std::cout << "----POOL ALLOCATOR----\n";
 
-		mem::pool_allocator<destructor_print> alloc(10);
-
-		auto data = alloc.allocate();
-
-//		auto del = std::get_deleter<void(*)(destructor_print*)>(data);
-//		if (*del != mem::dont_delete<destructor_print>)
-//			std::cout << "oops...\n";
+		
 
 		std::cout << "----------------------\n";
 	}
