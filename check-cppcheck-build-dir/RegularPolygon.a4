@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="538141813">
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Angle&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Angle&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\RegularPolygon.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Angle.h" line="19"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;m&apos; should be passed by reference." verbose="Parameter &apos;m&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\RegularPolygon.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\shader\Shader.h" line="91"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;radius&apos; should be passed by reference." verbose="Parameter &apos;radius&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\RegularPolygon.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\RegularPolygon.cpp" line="7"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;radius&apos; should be passed by reference." verbose="Parameter &apos;radius&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\RegularPolygon.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\RegularPolygon.cpp" line="13"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="calculateVertices" lineNumber="13"/>
+    <functioncall functionName="Angle"/>
+    <functioncall functionName="AngleOfRegularNPolygon"/>
+    <functioncall functionName="BLACK"/>
+    <functioncall functionName="BLUE"/>
+    <functioncall functionName="BROWN"/>
+    <functioncall functionName="CYAN"/>
+    <functioncall functionName="Complement"/>
+    <functioncall functionName="DARKGREY"/>
+    <functioncall functionName="GL_STATIC_DRAW"/>
+    <functioncall functionName="GREEN"/>
+    <functioncall functionName="GREY"/>
+    <functioncall functionName="GetConsoleScreenBufferInfo"/>
+    <functioncall functionName="GetStdHandle"/>
+    <functioncall functionName="LIGHTBLUE"/>
+    <functioncall functionName="LIGHTCYAN"/>
+    <functioncall functionName="LIGHTGREEN"/>
+    <functioncall functionName="LIGHTMAGENTA"/>
+    <functioncall functionName="LIGHTRED"/>
+    <functioncall functionName="MAGENTA"/>
+    <functioncall functionName="Mx"/>
+    <functioncall functionName="My"/>
+    <functioncall functionName="RED"/>
+    <functioncall functionName="RegularPolygon"/>
+    <functioncall functionName="STD_OUTPUT_HANDLE"/>
+    <functioncall functionName="SetConsoleTextAttribute"/>
+    <functioncall functionName="Shader"/>
+    <functioncall functionName="Shape2D"/>
+    <functioncall functionName="Supplement"/>
+    <functioncall functionName="Vertex"/>
+    <functioncall functionName="WHITE"/>
+    <functioncall functionName="WORD"/>
+    <functioncall functionName="YELLOW"/>
+    <functioncall functionName="a"/>
+    <functioncall functionName="attributes"/>
+    <functioncall functionName="c"/>
+    <functioncall functionName="calculateVertices"/>
+    <functioncall functionName="clr"/>
+    <functioncall functionName="condition"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="cos"/>
+    <functioncall functionName="csbi"/>
+    <functioncall functionName="current"/>
+    <functioncall functionName="data"/>
+    <functioncall functionName="debuggingEnabled"/>
+    <functioncall functionName="default"/>
+    <functioncall functionName="defaultColor"/>
+    <functioncall functionName="degrees"/>
+    <functioncall functionName="delete"/>
+    <functioncall functionName="error"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="float"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="hConsole"/>
+    <functioncall functionName="i"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="initialized"/>
+    <functioncall functionName="int"/>
+    <functioncall functionName="m"/>
+    <functioncall functionName="m_radius"/>
+    <functioncall functionName="middle"/>
+    <functioncall functionName="msg"/>
+    <functioncall functionName="n"/>
+    <functioncall functionName="new_min"/>
+    <functioncall functionName="old_min"/>
+    <functioncall functionName="operatorfloat"/>
+    <functioncall functionName="push_back"/>
+    <functioncall functionName="radians"/>
+    <functioncall functionName="radius"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="saveDefaultColor"/>
+    <functioncall functionName="setColor"/>
+    <functioncall functionName="sin"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="static_cast"/>
+    <functioncall functionName="switch"/>
+    <functioncall functionName="t"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="usage"/>
+    <functioncall functionName="v"/>
+    <functioncall functionName="value_type"/>
+    <functioncall functionName="wAttributes"/>
+    <functioncall functionName="while"/>
+    <functioncall functionName="x"/>
+    <functioncall functionName="y"/>
+    <functioncall functionName="z"/>
+  </FileInfo>
+</analyzerinfo>

@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="2767225455">
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Shape2D.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Shape2D.cpp" line="14"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Shape2D.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Shape2D.cpp" line="26"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;m&apos; should be passed by reference." verbose="Parameter &apos;m&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Shape2D.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\shader\Shader.h" line="91"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="setShader" lineNumber="56"/>
+    <functiondecl functionName="getShader" lineNumber="61"/>
+    <functiondecl functionName="getVertices" lineNumber="66"/>
+    <functiondecl functionName="draw" lineNumber="87"/>
+    <functiondecl functionName="release" lineNumber="102"/>
+    <functiondecl functionName="generateBuffer" lineNumber="109"/>
+    <functiondecl functionName="generateFloatVector" lineNumber="122"/>
+    <functiondecl functionName="generateVertexVector" lineNumber="135"/>
+    <functioncall functionName="ATTRIBUTE_VERTICES"/>
+    <functioncall functionName="BLACK"/>
+    <functioncall functionName="BLUE"/>
+    <functioncall functionName="BROWN"/>
+    <functioncall functionName="CYAN"/>
+    <functioncall functionName="DARKGREY"/>
+    <functioncall functionName="Exception"/>
+    <functioncall functionName="GL_ARRAY_BUFFER"/>
+    <functioncall functionName="GL_FALSE"/>
+    <functioncall functionName="GL_FLOAT"/>
+    <functioncall functionName="GL_STATIC_DRAW"/>
+    <functioncall functionName="GL_TRIANGLES"/>
+    <functioncall functionName="GLsizei"/>
+    <functioncall functionName="GREEN"/>
+    <functioncall functionName="GREY"/>
+    <functioncall functionName="GetConsoleScreenBufferInfo"/>
+    <functioncall functionName="GetStdHandle"/>
+    <functioncall functionName="LIGHTBLUE"/>
+    <functioncall functionName="LIGHTCYAN"/>
+    <functioncall functionName="LIGHTGREEN"/>
+    <functioncall functionName="LIGHTMAGENTA"/>
+    <functioncall functionName="LIGHTRED"/>
+    <functioncall functionName="MAGENTA"/>
+    <functioncall functionName="RED"/>
+    <functioncall functionName="STD_OUTPUT_HANDLE"/>
+    <functioncall functionName="SetConsoleTextAttribute"/>
+    <functioncall functionName="Shader"/>
+    <functioncall functionName="Shape2D"/>
+    <functioncall functionName="VTX_PER_TRIANGLE"/>
+    <functioncall functionName="VTX_SIZE"/>
+    <functioncall functionName="VectorsAreEqual"/>
+    <functioncall functionName="Vertex"/>
+    <functioncall functionName="WHITE"/>
+    <functioncall functionName="WORD"/>
+    <functioncall functionName="YELLOW"/>
+    <functioncall functionName="attributes"/>
+    <functioncall functionName="begin"/>
+    <functioncall functionName="c"/>
+    <functioncall functionName="catch"/>
+    <functioncall functionName="clear"/>
+    <functioncall functionName="clr"/>
+    <functioncall functionName="condition"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="csbi"/>
+    <functioncall functionName="data"/>
+    <functioncall functionName="debuggingEnabled"/>
+    <functioncall functionName="default"/>
+    <functioncall functionName="defaultColor"/>
+    <functioncall functionName="delete"/>
+    <functioncall functionName="emplace_back"/>
+    <functioncall functionName="end"/>
+    <functioncall functionName="error"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="float"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="generateBuffer"/>
+    <functioncall functionName="generateFloatVector"/>
+    <functioncall functionName="generateVertexVector"/>
+    <functioncall functionName="getVertices"/>
+    <functioncall functionName="glBindBuffer"/>
+    <functioncall functionName="glBufferData"/>
+    <functioncall functionName="glDeleteBuffers"/>
+    <functioncall functionName="glDisableVertexAttribArray"/>
+    <functioncall functionName="glDrawArrays"/>
+    <functioncall functionName="glEnableVertexAttribArray"/>
+    <functioncall functionName="glGenBuffers"/>
+    <functioncall functionName="glVertexAttribPointer"/>
+    <functioncall functionName="hConsole"/>
+    <functioncall functionName="i"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="initialized"/>
+    <functioncall functionName="int"/>
+    <functioncall functionName="m"/>
+    <functioncall functionName="m_buffer"/>
+    <functioncall functionName="m_shader"/>
+    <functioncall functionName="m_vertices"/>
+    <functioncall functionName="msg"/>
+    <functioncall functionName="nullptr"/>
+    <functioncall functionName="other_vertices"/>
+    <functioncall functionName="release"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="s"/>
+    <functioncall functionName="saveDefaultColor"/>
+    <functioncall functionName="setColor"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="sizeof"/>
+    <functioncall functionName="sort"/>
+    <functioncall functionName="static_cast"/>
+    <functioncall functionName="switch"/>
+    <functioncall functionName="t"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="usage"/>
+    <functioncall functionName="use"/>
+    <functioncall functionName="v"/>
+    <functioncall functionName="value_type"/>
+    <functioncall functionName="vertex_array"/>
+    <functioncall functionName="vertices"/>
+    <functioncall functionName="wAttributes"/>
+    <functioncall functionName="what"/>
+    <functioncall functionName="x"/>
+    <functioncall functionName="y"/>
+    <functioncall functionName="z"/>
+  </FileInfo>
+</analyzerinfo>

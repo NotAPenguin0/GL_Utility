@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="3436971200">
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ScreenSize&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ScreenSize&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\ScreenSize.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\ScreenSize.h" line="22"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="height" lineNumber="24"/>
+    <functiondecl functionName="width" lineNumber="25"/>
+    <functiondecl functionName="dimensions" lineNumber="27"/>
+    <functioncall functionName="BLACK"/>
+    <functioncall functionName="BLUE"/>
+    <functioncall functionName="BROWN"/>
+    <functioncall functionName="CYAN"/>
+    <functioncall functionName="DARKGREY"/>
+    <functioncall functionName="DEFAULT_SIZE"/>
+    <functioncall functionName="GREEN"/>
+    <functioncall functionName="GREY"/>
+    <functioncall functionName="GetConsoleScreenBufferInfo"/>
+    <functioncall functionName="GetStdHandle"/>
+    <functioncall functionName="LIGHTBLUE"/>
+    <functioncall functionName="LIGHTCYAN"/>
+    <functioncall functionName="LIGHTGREEN"/>
+    <functioncall functionName="LIGHTMAGENTA"/>
+    <functioncall functionName="LIGHTRED"/>
+    <functioncall functionName="MAGENTA"/>
+    <functioncall functionName="RED"/>
+    <functioncall functionName="STD_OUTPUT_HANDLE"/>
+    <functioncall functionName="ScreenSize"/>
+    <functioncall functionName="SetConsoleTextAttribute"/>
+    <functioncall functionName="WHITE"/>
+    <functioncall functionName="WORD"/>
+    <functioncall functionName="YELLOW"/>
+    <functioncall functionName="attributes"/>
+    <functioncall functionName="c"/>
+    <functioncall functionName="clr"/>
+    <functioncall functionName="condition"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="csbi"/>
+    <functioncall functionName="data"/>
+    <functioncall functionName="debuggingEnabled"/>
+    <functioncall functionName="default"/>
+    <functioncall functionName="defaultColor"/>
+    <functioncall functionName="error"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="first"/>
+    <functioncall functionName="h"/>
+    <functioncall functionName="hConsole"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="initialized"/>
+    <functioncall functionName="int"/>
+    <functioncall functionName="log_assert"/>
+    <functioncall functionName="m_height"/>
+    <functioncall functionName="m_width"/>
+    <functioncall functionName="make_pair"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="saveDefaultColor"/>
+    <functioncall functionName="second"/>
+    <functioncall functionName="setColor"/>
+    <functioncall functionName="static_cast"/>
+    <functioncall functionName="switch"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="w"/>
+    <functioncall functionName="wAttributes"/>
+  </FileInfo>
+</analyzerinfo>

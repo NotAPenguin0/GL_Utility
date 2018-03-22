@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="2691691044">
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" line="157"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" line="205"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" line="219"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" line="245"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;msg&apos; should be passed by reference." verbose="Parameter &apos;msg&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" line="36"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;path&apos; should be passed by reference." verbose="Parameter &apos;path&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" line="64"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;text&apos; should be passed by reference." verbose="Parameter &apos;text&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" line="98"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;msg&apos; should be passed by reference." verbose="Parameter &apos;msg&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" line="130"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;fileName&apos; should be passed by reference." verbose="Parameter &apos;fileName&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\logpp\log++.cpp" line="151"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="enableDebug" lineNumber="14"/>
+    <functiondecl functionName="disableDebug" lineNumber="19"/>
+    <functiondecl functionName="setDefaultColor" lineNumber="25"/>
+    <functiondecl functionName="what" lineNumber="41"/>
+    <functiondecl functionName="open" lineNumber="72"/>
+    <functiondecl functionName="create" lineNumber="81"/>
+    <functiondecl functionName="close" lineNumber="89"/>
+    <functiondecl functionName="write" lineNumber="98"/>
+    <functiondecl functionName="moveCursor" lineNumber="106"/>
+    <functiondecl functionName="getCursor" lineNumber="113"/>
+    <functiondecl functionName="isOpen" lineNumber="120"/>
+    <functiondecl functionName="what" lineNumber="135"/>
+    <functiondecl functionName="isOpen" lineNumber="171"/>
+    <functiondecl functionName="generateTimeStamp" lineNumber="177"/>
+    <functiondecl functionName="open" lineNumber="192"/>
+    <functiondecl functionName="close" lineNumber="213"/>
+    <functiondecl functionName="write" lineNumber="227"/>
+    <functioncall functionName="BLACK"/>
+    <functioncall functionName="BLUE"/>
+    <functioncall functionName="BROWN"/>
+    <functioncall functionName="CYAN"/>
+    <functioncall functionName="DARKGREY"/>
+    <functioncall functionName="Exception"/>
+    <functioncall functionName="FileLog"/>
+    <functioncall functionName="GREEN"/>
+    <functioncall functionName="GREY"/>
+    <functioncall functionName="GetConsoleScreenBufferInfo"/>
+    <functioncall functionName="GetStdHandle"/>
+    <functioncall functionName="LIGHTBLUE"/>
+    <functioncall functionName="LIGHTCYAN"/>
+    <functioncall functionName="LIGHTGREEN"/>
+    <functioncall functionName="LIGHTMAGENTA"/>
+    <functioncall functionName="LIGHTRED"/>
+    <functioncall functionName="MAGENTA"/>
+    <functioncall functionName="RED"/>
+    <functioncall functionName="STD_OUTPUT_HANDLE"/>
+    <functioncall functionName="SetConsoleTextAttribute"/>
+    <functioncall functionName="TextFile"/>
+    <functioncall functionName="WHITE"/>
+    <functioncall functionName="WORD"/>
+    <functioncall functionName="YELLOW"/>
+    <functioncall functionName="allow_create"/>
+    <functioncall functionName="attributes"/>
+    <functioncall functionName="c"/>
+    <functioncall functionName="catch"/>
+    <functioncall functionName="close"/>
+    <functioncall functionName="clr"/>
+    <functioncall functionName="condition"/>
+    <functioncall functionName="create"/>
+    <functioncall functionName="csbi"/>
+    <functioncall functionName="data"/>
+    <functioncall functionName="debuggingEnabled"/>
+    <functioncall functionName="default"/>
+    <functioncall functionName="defaultColor"/>
+    <functioncall functionName="error"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="fileName"/>
+    <functioncall functionName="generateTimeStamp"/>
+    <functioncall functionName="hConsole"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="in"/>
+    <functioncall functionName="initialized"/>
+    <functioncall functionName="int"/>
+    <functioncall functionName="isOpen"/>
+    <functioncall functionName="is_open"/>
+    <functioncall functionName="localtime_s"/>
+    <functioncall functionName="msg"/>
+    <functioncall functionName="nullptr"/>
+    <functioncall functionName="open"/>
+    <functioncall functionName="out"/>
+    <functioncall functionName="path"/>
+    <functioncall functionName="pos"/>
+    <functioncall functionName="put_time"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="saveDefaultColor"/>
+    <functioncall functionName="seekp"/>
+    <functioncall functionName="setColor"/>
+    <functioncall functionName="stamp"/>
+    <functioncall functionName="static_cast"/>
+    <functioncall functionName="str"/>
+    <functioncall functionName="switch"/>
+    <functioncall functionName="tellp"/>
+    <functioncall functionName="text"/>
+    <functioncall functionName="time"/>
+    <functioncall functionName="timeinfo"/>
+    <functioncall functionName="timestamp"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="wAttributes"/>
+    <functioncall functionName="what"/>
+    <functioncall functionName="write"/>
+  </FileInfo>
+</analyzerinfo>

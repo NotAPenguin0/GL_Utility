@@ -5,6 +5,7 @@
 
 #include <list>
 #include <cstdint>
+#include <utility>
 
 
 namespace mem
@@ -32,7 +33,7 @@ namespace mem
 		size_type m_pool_size_elems;
 
 		void* m_data;
-		std::list<void*> m_free_data;
+		std::list<std::shared_ptr<void>> m_free_data;
 
 //		std::list<void*>::iterator m_next_free;
 	};
@@ -50,15 +51,16 @@ namespace mem
 		/*Fill free list*/
 		while ((--pool_size_elems) >= 0)
 		{
-			m_free_data.emplace_front((void*)((T*)m_data + pool_size_elems));
+			m_free_data.emplace_front(std::shared_ptr<void>((void*)((T*)m_data + pool_size_elems), &identify_delete<void>));
 		}
 #ifdef ALLOCATOR_DEBUG
 		std::cout << "pool_allocator::pool_allocator(): Created free_data list containing following addresses:\n";
 		for (auto it = m_free_data.begin(); it != m_free_data.end(); ++it)
 		{
-			std::cout << (void*)(*it) << "\n";
+			std::cout << it->get() << "\n";
 		}
 #endif
+		
 
 //		m_next_free = m_free_data.begin();
 	}
@@ -71,14 +73,17 @@ namespace mem
 			auto obj = (T*)m_data + idx;
 
 			//if the object is not in the free list, we can safely destruct it
-			if (std::find(m_free_data.begin(), m_free_data.end(), (void*)obj) == m_free_data.end())
+			if (std::find(m_free_data.begin(), m_free_data.end(), std::shared_ptr<void>((void*)obj, &identify_delete<void>)) == m_free_data.end())
 			{
-//				obj->T::~T();
+				obj->T::~T();
 			}
+
 		}
 
+//		m_free_data.erase(std::remove_if(m_free_data.begin(), m_free_data.end(), [](void*) {return true; }));
+		m_free_data.clear();
 		//delete allocated memory block
-		::operator delete((T*)m_data/*, size() * sizeof(T)*/);
+		::operator delete(m_data, size() * sizeof(T));
 
 #ifdef ALLOCATOR_DEBUG
 		std::cout << "pool_allocator::~pool_allocator(): deallocated " << sizeof(T) * size() << " bytes\n";
@@ -101,9 +106,13 @@ namespace mem
 			logpp::Console::error("pool_allocator::allocate(): pool is not large enough");
 #endif
 		}
-		auto data = *(m_free_data.begin());
+		auto data = m_free_data.begin()->get();
 
-		m_free_data.erase(m_free_data.begin());
+		m_free_data.erase(std::remove(m_free_data.begin(), m_free_data.end(), std::shared_ptr<void>(data, &identify_delete<void>)));
+
+//		std::remove(m_free_data.begin(), m_free_data.end(), (void*)data);
+
+//		m_free_data.erase(m_free_data.begin());
 
 #ifdef ALLOCATOR_DEBUG
 		std::cout << "pool_allocator::allocate(): allocated " << sizeof(T) << " bytes at memory location " << data << "\n";
@@ -121,3 +130,10 @@ namespace mem
 	}
 
 };
+
+/*
+ *list of addresses of starting points for free elements
+ *void**
+ *->ptr to void*
+ *
+ **/

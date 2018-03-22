@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.81"/>
+    <errors>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Angle&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Angle&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\Angle.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Precision&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Precision&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\Circle.h" line="42"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;m&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;m&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\shader\Shader.h" line="91"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;radius&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;radius&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\Circle.cpp" line="19"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;radius&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;radius&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\Circle.cpp" line="24"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Color::m_r&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Color::m_r&amp;#039; is not initialized in the constructor." sinceDate="22/03/2018">
+            <location file="GL_Utility\Color.cpp" line="91"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Color::m_g&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Color::m_g&amp;#039; is not initialized in the constructor." sinceDate="22/03/2018">
+            <location file="GL_Utility\Color.cpp" line="91"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Color::m_b&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Color::m_b&amp;#039; is not initialized in the constructor." sinceDate="22/03/2018">
+            <location file="GL_Utility\Color.cpp" line="91"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Color::m_a&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Color::m_a&amp;#039; is not initialized in the constructor." sinceDate="22/03/2018">
+            <location file="GL_Utility\Color.cpp" line="91"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;RGBBase256&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;RGBBase256&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\Color.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;RGBBase256&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;RGBBase256&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\Color.h" line="20"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Color&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Color&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\Color.h" line="42"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Color&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Color&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\Color.h" line="43"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Color&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Color&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\Color.h" line="44"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="157"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="205"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="219"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="245"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;msg&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;msg&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="36"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;path&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;path&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="64"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;text&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;text&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="98"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;msg&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;msg&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="130"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;fileName&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;fileName&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="151"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;disableDebug&amp;#039; is never used." verbose="The function &amp;#039;disableDebug&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="19"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;enableDebug&amp;#039; is never used." verbose="The function &amp;#039;enableDebug&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="14"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getCursor&amp;#039; is never used." verbose="The function &amp;#039;getCursor&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="113"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;moveCursor&amp;#039; is never used." verbose="The function &amp;#039;moveCursor&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="106"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setDefaultColor&amp;#039; is never used." verbose="The function &amp;#039;setDefaultColor&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\logpp\log++.cpp" line="25"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\shader\Shader.cpp" line="21"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\shader\Shader.cpp" line="75"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;isLoaded&amp;#039; is never used." verbose="The function &amp;#039;isLoaded&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\shader\Shader.cpp" line="143"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setUniform&amp;#039; is never used." verbose="The function &amp;#039;setUniform&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\common\shader\Shader.cpp" line="308"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;msg&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;msg&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\Exception.cpp" line="8"/>
+        </error>
+        <error id="uselessAssignmentPtrArg" severity="warning" msg="Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?" verbose="Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?" sinceDate="22/03/2018">
+            <location file="GL_Utility\stack_allocator.hpp" line="168"/>
+        </error>
+        <error id="unsignedPositive" severity="style" msg="Unsigned variable &amp;#039;idx&amp;#039; can&amp;#039;t be negative so it is unnecessary to test it." verbose="Unsigned variable &amp;#039;idx&amp;#039; can&amp;#039;t be negative so it is unnecessary to test it." sinceDate="22/03/2018">
+            <location file="GL_Utility\sse_util.h" line="39"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;x&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;x&amp;#039; is assigned a value that is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\main.cpp" line="70"/>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &amp;#039;some_huge_class&amp;#039; does not have a constructor." verbose="The class &amp;#039;some_huge_class&amp;#039; does not have a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." sinceDate="22/03/2018">
+            <location file="GL_Utility\main.cpp" line="40"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;MessageCallback&amp;#039; is never used." verbose="The function &amp;#039;MessageCallback&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\main.cpp" line="27"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;ScreenSize&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;ScreenSize&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\ScreenSize.h" line="22"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;test_allocator&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;test_allocator&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\test_allocator.hpp" line="27"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;pool_allocator&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;pool_allocator&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." sinceDate="22/03/2018">
+            <location file="GL_Utility\pool_allocator.hpp" line="23"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;radius&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;radius&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\RegularPolygon.cpp" line="7"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;radius&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;radius&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\RegularPolygon.cpp" line="13"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\Renderer.cpp" line="29"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;Init&amp;#039; is never used." verbose="The function &amp;#039;Init&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Renderer.cpp" line="12"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;SwapBuffers&amp;#039; is never used." verbose="The function &amp;#039;SwapBuffers&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Renderer.cpp" line="90"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;WindowShouldClose&amp;#039; is never used." verbose="The function &amp;#039;WindowShouldClose&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Renderer.cpp" line="96"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getWindow&amp;#039; is never used." verbose="The function &amp;#039;getWindow&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Renderer.cpp" line="101"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setClearColor&amp;#039; is never used." verbose="The function &amp;#039;setClearColor&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Renderer.cpp" line="107"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\Shape2D.cpp" line="14"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." sinceDate="22/03/2018">
+            <location file="GL_Utility\Shape2D.cpp" line="26"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getShader&amp;#039; is never used." verbose="The function &amp;#039;getShader&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Shape2D.cpp" line="61"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setShader&amp;#039; is never used." verbose="The function &amp;#039;setShader&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Shape2D.cpp" line="56"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;Distance&amp;#039; is never used." verbose="The function &amp;#039;Distance&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Math.cpp" line="9"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;Middle&amp;#039; is never used." verbose="The function &amp;#039;Middle&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Math.cpp" line="16"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;dimensions&amp;#039; is never used." verbose="The function &amp;#039;dimensions&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\ScreenSize.cpp" line="27"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;operator-&amp;#039; is never used." verbose="The function &amp;#039;operator-&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Vertex.cpp" line="40"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;operator&amp;lt;&amp;lt;&amp;#039; is never used." verbose="The function &amp;#039;operator&amp;lt;&amp;lt;&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Vertex.cpp" line="116"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;to_vec4&amp;#039; is never used." verbose="The function &amp;#039;to_vec4&amp;#039; is never used." sinceDate="22/03/2018">
+            <location file="GL_Utility\Vertex.cpp" line="38"/>
+        </error>
+    </errors>
+</results>

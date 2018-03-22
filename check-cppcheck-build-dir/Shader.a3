@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="1919318">
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\shader\Shader.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\shader\Shader.cpp" line="21"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\shader\Shader.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\shader\Shader.cpp" line="75"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;m&apos; should be passed by reference." verbose="Parameter &apos;m&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\shader\Shader.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\common\shader\Shader.h" line="91"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="load" lineNumber="46"/>
+    <functiondecl functionName="use" lineNumber="136"/>
+    <functiondecl functionName="isLoaded" lineNumber="143"/>
+    <functiondecl functionName="setUniform" lineNumber="145"/>
+    <functiondecl functionName="setUniform" lineNumber="153"/>
+    <functiondecl functionName="setUniform" lineNumber="160"/>
+    <functiondecl functionName="setUniform" lineNumber="167"/>
+    <functiondecl functionName="setUniform" lineNumber="174"/>
+    <functiondecl functionName="setUniform" lineNumber="181"/>
+    <functiondecl functionName="setUniform" lineNumber="188"/>
+    <functiondecl functionName="setUniform" lineNumber="195"/>
+    <functiondecl functionName="setUniform" lineNumber="203"/>
+    <functiondecl functionName="setUniform" lineNumber="210"/>
+    <functiondecl functionName="setUniform" lineNumber="217"/>
+    <functiondecl functionName="setUniform" lineNumber="224"/>
+    <functiondecl functionName="setUniform" lineNumber="231"/>
+    <functiondecl functionName="setUniform" lineNumber="238"/>
+    <functiondecl functionName="setUniform" lineNumber="245"/>
+    <functiondecl functionName="setUniform" lineNumber="252"/>
+    <functiondecl functionName="setUniform" lineNumber="259"/>
+    <functiondecl functionName="setUniform" lineNumber="266"/>
+    <functiondecl functionName="setUniform" lineNumber="273"/>
+    <functiondecl functionName="setUniform" lineNumber="280"/>
+    <functiondecl functionName="setUniform" lineNumber="287"/>
+    <functiondecl functionName="setUniform" lineNumber="294"/>
+    <functiondecl functionName="setUniform" lineNumber="301"/>
+    <functiondecl functionName="setUniform" lineNumber="308"/>
+    <functiondecl functionName="release" lineNumber="315"/>
+    <functioncall functionName="Exception"/>
+    <functioncall functionName="GL_COMPILE_STATUS"/>
+    <functioncall functionName="GL_FALSE"/>
+    <functioncall functionName="GL_FRAGMENT_SHADER"/>
+    <functioncall functionName="GL_LINK_STATUS"/>
+    <functioncall functionName="GL_VERTEX_SHADER"/>
+    <functioncall functionName="ID"/>
+    <functioncall functionName="Shader"/>
+    <functioncall functionName="b"/>
+    <functioncall functionName="b0"/>
+    <functioncall functionName="b1"/>
+    <functioncall functionName="b2"/>
+    <functioncall functionName="b3"/>
+    <functioncall functionName="badbit"/>
+    <functioncall functionName="c_str"/>
+    <functioncall functionName="catch"/>
+    <functioncall functionName="close"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="delete"/>
+    <functioncall functionName="error"/>
+    <functioncall functionName="exceptions"/>
+    <functioncall functionName="f"/>
+    <functioncall functionName="f0"/>
+    <functioncall functionName="f1"/>
+    <functioncall functionName="f2"/>
+    <functioncall functionName="fShaderCode"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="fragment"/>
+    <functioncall functionName="fragment_path"/>
+    <functioncall functionName="framgent_path"/>
+    <functioncall functionName="glAttachShader"/>
+    <functioncall functionName="glCompileShader"/>
+    <functioncall functionName="glCreateProgram"/>
+    <functioncall functionName="glCreateShader"/>
+    <functioncall functionName="glDeleteShader"/>
+    <functioncall functionName="glGetProgramInfoLog"/>
+    <functioncall functionName="glGetProgramiv"/>
+    <functioncall functionName="glGetShaderInfoLog"/>
+    <functioncall functionName="glGetShaderiv"/>
+    <functioncall functionName="glGetUniformLocation"/>
+    <functioncall functionName="glLinkProgram"/>
+    <functioncall functionName="glShaderSource"/>
+    <functioncall functionName="glUniform1f"/>
+    <functioncall functionName="glUniform1i"/>
+    <functioncall functionName="glUniform1ui"/>
+    <functioncall functionName="glUniform2f"/>
+    <functioncall functionName="glUniform2fv"/>
+    <functioncall functionName="glUniform2i"/>
+    <functioncall functionName="glUniform2ui"/>
+    <functioncall functionName="glUniform3f"/>
+    <functioncall functionName="glUniform3fv"/>
+    <functioncall functionName="glUniform3i"/>
+    <functioncall functionName="glUniform3ui"/>
+    <functioncall functionName="glUniform4f"/>
+    <functioncall functionName="glUniform4fv"/>
+    <functioncall functionName="glUniform4i"/>
+    <functioncall functionName="glUniform4ui"/>
+    <functioncall functionName="glUniformMatrix2fv"/>
+    <functioncall functionName="glUniformMatrix2x3fv"/>
+    <functioncall functionName="glUniformMatrix2x4fv"/>
+    <functioncall functionName="glUniformMatrix3fv"/>
+    <functioncall functionName="glUniformMatrix3x2fv"/>
+    <functioncall functionName="glUniformMatrix3x4fv"/>
+    <functioncall functionName="glUniformMatrix4fv"/>
+    <functioncall functionName="glUniformMatrix4x2fv"/>
+    <functioncall functionName="glUniformMatrix4x3fv"/>
+    <functioncall functionName="glUseProgram"/>
+    <functioncall functionName="i"/>
+    <functioncall functionName="i0"/>
+    <functioncall functionName="i1"/>
+    <functioncall functionName="i2"/>
+    <functioncall functionName="i3"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="infoLog"/>
+    <functioncall functionName="int"/>
+    <functioncall functionName="load"/>
+    <functioncall functionName="loaded"/>
+    <functioncall functionName="location"/>
+    <functioncall functionName="m"/>
+    <functioncall functionName="mat"/>
+    <functioncall functionName="msg"/>
+    <functioncall functionName="nullptr"/>
+    <functioncall functionName="open"/>
+    <functioncall functionName="rdbuf"/>
+    <functioncall functionName="release"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="str"/>
+    <functioncall functionName="string"/>
+    <functioncall functionName="success"/>
+    <functioncall functionName="swap"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="vShaderCode"/>
+    <functioncall functionName="value_ptr"/>
+    <functioncall functionName="vec"/>
+    <functioncall functionName="vertex"/>
+    <functioncall functionName="vertex_path"/>
+    <functioncall functionName="what"/>
+  </FileInfo>
+</analyzerinfo>

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <memory>
 
 namespace mem
@@ -8,6 +9,8 @@ namespace mem
 	template<typename U> void dont_delete(U*) {  }
 
 	template<typename U> void default_deleter(U* obj) { delete obj; }
+
+	template<typename U> void identify_delete(U* obj) { std::cout << "deleting " << obj << "\n"; }
 
 	/*Convert a shared_ptr<void> to shared_ptr<T>
 	 *Template parameter U represents the type the resulting smart pointer will hold*/

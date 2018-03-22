@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="3619080113">
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="x" lineNumber="29"/>
+    <functiondecl functionName="y" lineNumber="30"/>
+    <functiondecl functionName="z" lineNumber="31"/>
+    <functiondecl functionName="x" lineNumber="33"/>
+    <functiondecl functionName="y" lineNumber="34"/>
+    <functiondecl functionName="z" lineNumber="35"/>
+    <functiondecl functionName="to_vec3" lineNumber="37"/>
+    <functiondecl functionName="to_vec4" lineNumber="38"/>
+    <functiondecl functionName="operator-" lineNumber="40"/>
+    <functiondecl functionName="operator&lt;&lt;" lineNumber="116"/>
+    <functioncall functionName="Vertex"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="default"/>
+    <functioncall functionName="float"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="m_x"/>
+    <functioncall functionName="m_y"/>
+    <functioncall functionName="m_z"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="to_vec3"/>
+    <functioncall functionName="v"/>
+    <functioncall functionName="vec3"/>
+    <functioncall functionName="vec4"/>
+    <functioncall functionName="x"/>
+    <functioncall functionName="y"/>
+    <functioncall functionName="z"/>
+  </FileInfo>
+</analyzerinfo>

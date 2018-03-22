@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="758971235">
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;msg&apos; should be passed by reference." verbose="Parameter &apos;msg&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Exception.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Exception.cpp" line="8"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="what" lineNumber="9"/>
+    <functioncall functionName="Exception"/>
+    <functioncall functionName="error"/>
+    <functioncall functionName="msg"/>
+  </FileInfo>
+</analyzerinfo>

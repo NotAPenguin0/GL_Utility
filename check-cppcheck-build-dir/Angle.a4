@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="2342163855">
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Angle&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Angle&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Angle.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Angle.h" line="19"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="degrees" lineNumber="25"/>
+    <functiondecl functionName="radians" lineNumber="30"/>
+    <functioncall functionName="Angle"/>
+    <functioncall functionName="MAX_DEGREES"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="degrees"/>
+    <functioncall functionName="float"/>
+    <functioncall functionName="fmod"/>
+    <functioncall functionName="m_degrees"/>
+    <functioncall functionName="operatorfloat"/>
+    <functioncall functionName="radians"/>
+  </FileInfo>
+</analyzerinfo>

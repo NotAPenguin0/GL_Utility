@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="68541148">
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Color::m_r&apos; is not initialized in the constructor." verbose="Member variable &apos;Color::m_r&apos; is not initialized in the constructor." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" line="91"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Color::m_g&apos; is not initialized in the constructor." verbose="Member variable &apos;Color::m_g&apos; is not initialized in the constructor." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" line="91"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Color::m_b&apos; is not initialized in the constructor." verbose="Member variable &apos;Color::m_b&apos; is not initialized in the constructor." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" line="91"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Color::m_a&apos; is not initialized in the constructor." verbose="Member variable &apos;Color::m_a&apos; is not initialized in the constructor." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" line="91"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Angle&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Angle&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Angle.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;RGBBase256&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;RGBBase256&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;RGBBase256&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;RGBBase256&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="20"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="42"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="43"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="44"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="r" lineNumber="29"/>
+    <functiondecl functionName="g" lineNumber="34"/>
+    <functiondecl functionName="b" lineNumber="39"/>
+    <functiondecl functionName="a" lineNumber="44"/>
+    <functiondecl functionName="r" lineNumber="49"/>
+    <functiondecl functionName="g" lineNumber="54"/>
+    <functiondecl functionName="b" lineNumber="59"/>
+    <functiondecl functionName="a" lineNumber="64"/>
+    <functiondecl functionName="MapToRange" lineNumber="69"/>
+    <functiondecl functionName="r" lineNumber="96"/>
+    <functiondecl functionName="g" lineNumber="97"/>
+    <functiondecl functionName="b" lineNumber="98"/>
+    <functiondecl functionName="a" lineNumber="99"/>
+    <functiondecl functionName="r" lineNumber="101"/>
+    <functiondecl functionName="g" lineNumber="102"/>
+    <functiondecl functionName="b" lineNumber="103"/>
+    <functiondecl functionName="a" lineNumber="104"/>
+    <functioncall functionName="Angle"/>
+    <functioncall functionName="Color"/>
+    <functioncall functionName="MapToRange"/>
+    <functioncall functionName="OLD_MAX"/>
+    <functioncall functionName="OLD_MIN"/>
+    <functioncall functionName="RGBBase256"/>
+    <functioncall functionName="Vertex"/>
+    <functioncall functionName="a"/>
+    <functioncall functionName="b"/>
+    <functioncall functionName="char"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="default"/>
+    <functioncall functionName="float"/>
+    <functioncall functionName="g"/>
+    <functioncall functionName="m_a"/>
+    <functioncall functionName="m_b"/>
+    <functioncall functionName="m_g"/>
+    <functioncall functionName="m_r"/>
+    <functioncall functionName="new_min"/>
+    <functioncall functionName="old_min"/>
+    <functioncall functionName="operatorfloat"/>
+    <functioncall functionName="r"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="vec4"/>
+    <functioncall functionName="w"/>
+    <functioncall functionName="x"/>
+    <functioncall functionName="y"/>
+    <functioncall functionName="z"/>
+  </FileInfo>
+</analyzerinfo>

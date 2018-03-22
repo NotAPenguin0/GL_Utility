@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="2867703078">
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Angle&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Angle&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Renderer.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Angle.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;RGBBase256&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;RGBBase256&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Renderer.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;RGBBase256&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;RGBBase256&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Renderer.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="20"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Renderer.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="42"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Renderer.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="43"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Color&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Renderer.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Color.h" line="44"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ScreenSize&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ScreenSize&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Renderer.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\ScreenSize.h" line="22"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++." cwe="398">
+            <location file0="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Renderer.cpp" file="C:\Users\michi_000\Desktop\C++\OpenGL\GL_Utility\GL_Utility\Renderer.cpp" line="29"/>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="wasInit" lineNumber="10"/>
+    <functiondecl functionName="Init" lineNumber="12"/>
+    <functiondecl functionName="SetGLFWWindowHints" lineNumber="35"/>
+    <functiondecl functionName="InitGLFW" lineNumber="46"/>
+    <functiondecl functionName="InitGLEW" lineNumber="56"/>
+    <functiondecl functionName="InstantiateWindow" lineNumber="66"/>
+    <functiondecl functionName="CreateVAO" lineNumber="81"/>
+    <functiondecl functionName="SwapBuffers" lineNumber="90"/>
+    <functiondecl functionName="WindowShouldClose" lineNumber="96"/>
+    <functiondecl functionName="getWindow" lineNumber="101"/>
+    <functiondecl functionName="setClearColor" lineNumber="107"/>
+    <functiondecl functionName="clear" lineNumber="112"/>
+    <functioncall functionName="Angle"/>
+    <functioncall functionName="BLACK"/>
+    <functioncall functionName="BLUE"/>
+    <functioncall functionName="BROWN"/>
+    <functioncall functionName="CYAN"/>
+    <functioncall functionName="Color"/>
+    <functioncall functionName="CreateVAO"/>
+    <functioncall functionName="DARKGREY"/>
+    <functioncall functionName="Exception"/>
+    <functioncall functionName="GLFW_CONTEXT_VERSION_MAJOR"/>
+    <functioncall functionName="GLFW_CONTEXT_VERSION_MINOR"/>
+    <functioncall functionName="GLFW_OPENGL_CORE_PROFILE"/>
+    <functioncall functionName="GLFW_OPENGL_PROFILE"/>
+    <functioncall functionName="GLFW_SAMPLES"/>
+    <functioncall functionName="GL_DEPTH_BUFFER_BIT"/>
+    <functioncall functionName="GREEN"/>
+    <functioncall functionName="GREY"/>
+    <functioncall functionName="GetConsoleScreenBufferInfo"/>
+    <functioncall functionName="GetStdHandle"/>
+    <functioncall functionName="InitGLEW"/>
+    <functioncall functionName="InitGLFW"/>
+    <functioncall functionName="InstantiateWindow"/>
+    <functioncall functionName="LIGHTBLUE"/>
+    <functioncall functionName="LIGHTCYAN"/>
+    <functioncall functionName="LIGHTGREEN"/>
+    <functioncall functionName="LIGHTMAGENTA"/>
+    <functioncall functionName="LIGHTRED"/>
+    <functioncall functionName="MAGENTA"/>
+    <functioncall functionName="RED"/>
+    <functioncall functionName="RGBBase256"/>
+    <functioncall functionName="Renderer"/>
+    <functioncall functionName="STD_OUTPUT_HANDLE"/>
+    <functioncall functionName="ScreenSize"/>
+    <functioncall functionName="SetConsoleTextAttribute"/>
+    <functioncall functionName="SetGLFWWindowHints"/>
+    <functioncall functionName="Vertex"/>
+    <functioncall functionName="VertexArrayID"/>
+    <functioncall functionName="WHITE"/>
+    <functioncall functionName="WORD"/>
+    <functioncall functionName="YELLOW"/>
+    <functioncall functionName="a"/>
+    <functioncall functionName="attributes"/>
+    <functioncall functionName="b"/>
+    <functioncall functionName="c"/>
+    <functioncall functionName="caption"/>
+    <functioncall functionName="catch"/>
+    <functioncall functionName="char"/>
+    <functioncall functionName="clr"/>
+    <functioncall functionName="condition"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="csbi"/>
+    <functioncall functionName="data"/>
+    <functioncall functionName="debuggingEnabled"/>
+    <functioncall functionName="decltype"/>
+    <functioncall functionName="default"/>
+    <functioncall functionName="defaultColor"/>
+    <functioncall functionName="delete"/>
+    <functioncall functionName="draw"/>
+    <functioncall functionName="error"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="flags"/>
+    <functioncall functionName="float"/>
+    <functioncall functionName="g"/>
+    <functioncall functionName="glBindVertexArray"/>
+    <functioncall functionName="glClear"/>
+    <functioncall functionName="glClearColor"/>
+    <functioncall functionName="glGenVertexArrays"/>
+    <functioncall functionName="glewInit"/>
+    <functioncall functionName="glfwCreateWindow"/>
+    <functioncall functionName="glfwInit"/>
+    <functioncall functionName="glfwMakeContextCurrent"/>
+    <functioncall functionName="glfwSwapBuffers"/>
+    <functioncall functionName="glfwTerminate"/>
+    <functioncall functionName="glfwWindowHint"/>
+    <functioncall functionName="glfwWindowShouldClose"/>
+    <functioncall functionName="hConsole"/>
+    <functioncall functionName="height"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="initialized"/>
+    <functioncall functionName="int"/>
+    <functioncall functionName="m_window"/>
+    <functioncall functionName="new_min"/>
+    <functioncall functionName="nullptr"/>
+    <functioncall functionName="old_min"/>
+    <functioncall functionName="operatorfloat"/>
+    <functioncall functionName="r"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="saveDefaultColor"/>
+    <functioncall functionName="setColor"/>
+    <functioncall functionName="static_assert"/>
+    <functioncall functionName="static_cast"/>
+    <functioncall functionName="switch"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="value"/>
+    <functioncall functionName="wAttributes"/>
+    <functioncall functionName="wasInit"/>
+    <functioncall functionName="what"/>
+    <functioncall functionName="width"/>
+    <functioncall functionName="window"/>
+  </FileInfo>
+</analyzerinfo>
