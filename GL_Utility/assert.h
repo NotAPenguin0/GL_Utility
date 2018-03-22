@@ -2,6 +2,7 @@
 #define _ASSERT_H_
 
 #include "common/logpp/log++.h"
+#include <string>
 
 #undef ASSERT
 #ifndef DISABLE_ASSERT
