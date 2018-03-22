@@ -62,7 +62,7 @@ namespace mem
 	};
 
 	template<typename T, size_t block_size>
-	pool_allocator<T, block_size>::size_type pool_allocator<T, block_size>::pad_pointer(data_ptr p, size_type align)
+	typename pool_allocator<T, block_size>::size_type pool_allocator<T, block_size>::pad_pointer(data_ptr p, size_type align) const
 	{
 		auto result = reinterpret_cast<uintptr_t>(p);
 		return ((align - result) % align);
@@ -86,6 +86,64 @@ namespace mem
 
 		m_current_slot = reinterpret_cast<slot*>(body + body_padding);
 		m_last_slot = reinterpret_cast<slot*>(new_block + block_size - sizeof(slot) + 1);
+		
 	}
+
+	/*Pseudo:
+	 *If we have a free slot, move to next and return
+	 *
+	 *Else: 
+	 *if current slot is last slot -> new mem
+	 *return next current slot*/
+	template<typename T, size_t block_size>
+	typename pool_allocator<T, block_size>::pointer pool_allocator<T, block_size>::allocate()
+	{
+		/*Check if there are still free slots available*/
+		if (m_free_slot != nullptr)
+		{
+			/*Create the T* pointer and move on to next free slot*/
+			auto result = reinterpret_cast<pointer>(m_free_slot);
+			m_free_slot = m_free_slot->next;
+			return result;
+		}
+		else
+		{
+			if (m_current_slot >= m_last_slot)
+				allocate_block();
+			return reinterpret_cast<pointer>(m_current_slot++);
+		}
+	}
+
+	template<typename T, size_t block_size>
+	void pool_allocator<T, block_size>::deallocate(pointer p)
+	{
+		if (p != nullptr)
+		{
+			reinterpret_cast<slot*>(p)->next = m_free_slot;
+			m_free_slot = reinterpret_cast<slot*>(p);
+		}
+	}
+
+	template<typename T, size_t block_size>
+	typename pool_allocator<T, block_size>::size_type pool_allocator<T, block_size>::max_size() const
+	{
+		size_type max_blocks = -1 / block_size;
+		return (block_size - sizeof(data_ptr)) / sizeof(slot) * max_blocks;
+	}
+
+	template<typename T, size_t block_size>
+	template<typename U, typename... Args>
+	void pool_allocator<T, block_size>::construct(U* p, Args&&... args)
+	{
+		new (p) U(std::forward<Args>(args)...);
+	}
+
+	template<typename T, size_t block_size>
+	template<typename U>
+	void pool_allocator<T, block_size>::destroy(U* p)
+	{
+		p->U::~U();
+	}
+
 
 };
