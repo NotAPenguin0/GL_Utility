@@ -136,6 +136,9 @@ int main()
 
 		auto data = alloc.allocate();
 
+//		auto del = std::get_deleter<void(*)(destructor_print*)>(data);
+//		if (*del != mem::dont_delete<destructor_print>)
+//			std::cout << "oops...\n";
 
 		std::cout << "----------------------\n";
 	}
