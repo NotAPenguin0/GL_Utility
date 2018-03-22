@@ -1,6 +1,8 @@
 #ifndef _VERTEX_H_
 #define _VERTEX_H_
 
+#pragma warning(disable: 4005)
+
 #include <GLM\glm.hpp>
 #include <iostream>
 

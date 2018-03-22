@@ -1,6 +1,8 @@
 #ifndef _TRIANGLE_H_
 #define _TRIANGLE_H_
 
+#pragma warning(disable: 4005)
+
 #include <vector> //For storing vertices
 #include <algorithm> //For std::sort(), used in operator==()
 

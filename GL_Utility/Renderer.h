@@ -1,6 +1,8 @@
 #ifndef _RENDERER_H_
 #define _RENDERER_H_
 
+#pragma warning(disable: 4005)
+
 #include <GL\glew.h>
 #include <GL\glfw3.h>
 

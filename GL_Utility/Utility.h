@@ -1,6 +1,8 @@
 #ifndef _UTILITY_H_
 #define _UTILITY_H_
 
+#pragma warning(disable: 4005)
+
 #include <vector>
 #include <iostream>
 

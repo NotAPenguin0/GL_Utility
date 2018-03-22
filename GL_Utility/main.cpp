@@ -11,7 +11,7 @@
 
 
 #include "assert.h"
-
+#pragma warning(disable: 4005)
 #include "sse_util.h"
 
 #include "test_allocator.hpp"
@@ -132,7 +132,15 @@ int main()
 		std::cout << "\n\n\n";
 		std::cout << "----POOL ALLOCATOR----\n";
 
-		
+		mem::pool_allocator<destructor_print> alloc;
+
+		for (int i = 0; i < 1000; ++i)
+		{
+			auto x = alloc.new_element();
+
+			alloc.delete_element(x);
+
+		}
 
 		std::cout << "----------------------\n";
 	}

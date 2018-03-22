@@ -1,6 +1,7 @@
 #ifndef _SHADER_H_
 #define _SHADER_H_
 
+#pragma warning(disable: 4005)
 
 //OpenGL Headers
 #include <GL\glew.h>

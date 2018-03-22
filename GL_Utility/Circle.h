@@ -1,6 +1,8 @@
 #ifndef _CIRCLE_H_
 #define _CIRCLE_H_
 
+#pragma warning(disable: 4005)
+
 #include <vector> //To store vertices
 #include <cmath> //For sin()
 

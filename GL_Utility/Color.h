@@ -1,6 +1,9 @@
 #ifndef _COLOR_H_
 #define _COLOR_H_
 
+#pragma warning(disable: 4005)
+#pragma warning(disable: 4244)
+
 #include <GLM\glm.hpp>
 #include "Math.h"
 

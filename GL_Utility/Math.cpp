@@ -23,7 +23,7 @@ namespace Core
 
 		Angle AngleOfRegularNPolygon(unsigned int n)
 		{
-			return ((n - 2) * 180) / n;
+			return Angle(static_cast<Angle::degrees_type>(((n - 2) * 180) / n));
 		}
 
 		Angle Complement(Angle const& a)

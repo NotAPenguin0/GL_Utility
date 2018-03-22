@@ -1,6 +1,9 @@
 #ifndef _ANGLE_H_
 #define _ANGLE_H_
 
+#pragma warning(disable: 4005)
+#pragma warning(disable: 4172)
+
 #include <GLM\glm.hpp>
 #include <cmath>
 

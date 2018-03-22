@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable: 4624)
 
 #include "mem_util.hpp"
 #include "assert.h"
@@ -24,20 +25,21 @@ namespace mem
 
 		//#TODO: Constructors, copy assignment, etc
 
+		~pool_allocator();
+
 		pointer allocate();
 		void deallocate(pointer p);
 
 		template<typename U, typename... Args>
-		pointer construct(U* p, Args&&... args);
+		void construct(U* p, Args&&... args);
 
 		template<typename U>
 		void destroy(U* p);
 
-		template<typename U, typename... Args>
-		pointer newElement(U* p, Args&&... args);
+		template<typename... Args>
+		pointer new_element(Args&&... args);
 
-		template<typename U>
-		void deleteElement(U* p);
+		void delete_element(pointer p);
 
 		size_type max_size() const;
 
@@ -60,6 +62,18 @@ namespace mem
 
 		STATIC_ASSERT(block_size >= 2 * sizeof(slot), "pool_allocator(): block size is too small");
 	};
+
+	template<typename T, size_t block_size>
+	pool_allocator<T, block_size>::~pool_allocator()
+	{
+		slot* curr = m_current_block;
+		while (curr != nullptr) 
+		{
+			slot* prev = curr->next;
+			::operator delete(reinterpret_cast<void*>(curr));
+			curr = prev;
+		}
+	}
 
 	template<typename T, size_t block_size>
 	typename pool_allocator<T, block_size>::size_type pool_allocator<T, block_size>::pad_pointer(data_ptr p, size_type align) const
@@ -145,5 +159,22 @@ namespace mem
 		p->U::~U();
 	}
 
+	template<typename T, size_t block_size>
+	template<typename... Args>
+	typename pool_allocator<T, block_size>::pointer pool_allocator<T, block_size>::new_element(Args&&... args)
+	{
+		pointer result = allocate();
+		construct<value_type>(result, std::forward<Args>(args)...);
+		return result;
+	}
 
+	template<typename T, size_t block_size>
+	void pool_allocator<T, block_size>::delete_element(pointer p)
+	{
+		if (p != nullptr)
+		{
+			destroy<value_type>(p);
+			deallocate(p);
+		}
+	}
 };

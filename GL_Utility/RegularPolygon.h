@@ -1,6 +1,7 @@
 #ifndef _REGULAR_POLYGON_H_
 #define _REGULAR_POLYGON_H_
 
+#pragma warning(disable: 4005)
 
 #include "Math.h"
 #include "Utility.h"

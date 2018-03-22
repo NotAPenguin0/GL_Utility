@@ -1,6 +1,8 @@
 #ifndef _SHAPE_2D_H_
 #define _SHAPE_2D_H_
 
+#pragma warning(disable: 4005)
+
 #include "Vertex.h"
 #include "Exception.h"
 #include "Utility.h"

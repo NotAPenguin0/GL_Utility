@@ -1,6 +1,8 @@
 #ifndef _MATH_H_
 #define _MATH_H_
 
+#pragma warning(disable: 4005)
+
 #include <cmath>
 
 #include "Vertex.h"
